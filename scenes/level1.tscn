@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://blis02ss8ccpq"]
+[gd_scene load_steps=9 format=3 uid="uid://blis02ss8ccpq"]
 
 [ext_resource type="Texture2D" uid="uid://du84hlpkpwenu" path="res://art/Sprite-grass.png" id="1_75ivj"]
 [ext_resource type="Texture2D" uid="uid://c6nmkqvosr81c" path="res://art/Sprite-water-Sheet.png" id="2_5eob6"]
 [ext_resource type="PackedScene" uid="uid://sidvgbqie7pd" path="res://scenes/player.tscn" id="3_qhhfc"]
+[ext_resource type="Script" path="res://scripts/Fight1.gd" id="4_kocbc"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_do4rb"]
 texture = ExtResource("1_75ivj")
@@ -75,6 +76,9 @@ physics_layer_0/collision_layer = 1
 sources/2 = SubResource("TileSetAtlasSource_do4rb")
 sources/3 = SubResource("TileSetAtlasSource_rykxe")
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_6rjc0"]
+radius = 25.02
+
 [node name="level1" type="Node2D"]
 
 [node name="TileMap" type="TileMap" parent="."]
@@ -86,3 +90,13 @@ layer_0/tile_data = PackedInt32Array(0, 196610, 0, 65536, 131074, 0, 131072, 131
 position = Vector2(122, 86)
 
 [node name="Camera2D" type="Camera2D" parent="player"]
+
+[node name="Area2D" type="Area2D" parent="."]
+script = ExtResource("4_kocbc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(445, 64)
+shape = SubResource("CircleShape2D_6rjc0")
+
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
+[connection signal="body_exited" from="Area2D" to="Area2D" method="_on_body_exited"]
