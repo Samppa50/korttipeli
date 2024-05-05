@@ -1,0 +1,57 @@
+[gd_scene load_steps=7 format=3 uid="uid://dtn8o3sshmkua"]
+
+[ext_resource type="Texture2D" uid="uid://dxocmwdqywapg" path="res://art/megakeharibackground.png" id="1_kq5co"]
+[ext_resource type="PackedScene" uid="uid://dbysdqp1ojuut" path="res://scenes/battle/player/playerfight.tscn" id="2_58iix"]
+[ext_resource type="PackedScene" uid="uid://bpes5bwjwttui" path="res://scenes/battle/player/enemybasic.tscn" id="3_jwea3"]
+[ext_resource type="Script" path="res://scenes/battle/hand_ui/hand.gd" id="4_8ble6"]
+[ext_resource type="PackedScene" uid="uid://dvptm3bvypude" path="res://scenes/battle/cards_ui/card_ui.tscn" id="4_amugw"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hl3xg"]
+size = Vector2(1152, 437)
+
+[node name="FightScene1" type="Node2D"]
+
+[node name="background" type="Sprite2D" parent="."]
+modulate = Color(0.737255, 0.737255, 0.737255, 1)
+position = Vector2(575.75, 323.5)
+scale = Vector2(0.598177, 0.599074)
+texture = ExtResource("1_kq5co")
+
+[node name="playerfight" parent="." instance=ExtResource("2_58iix")]
+position = Vector2(86, 316)
+
+[node name="enemybasic" parent="." instance=ExtResource("3_jwea3")]
+position = Vector2(989, 356)
+
+[node name="carddroparea" type="Area2D" parent="."]
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="carddroparea"]
+position = Vector2(575, 219.5)
+shape = SubResource("RectangleShape2D_hl3xg")
+
+[node name="battleUI" type="CanvasLayer" parent="." groups=["ui_layer"]]
+
+[node name="hand" type="HBoxContainer" parent="battleUI"]
+custom_minimum_size = Vector2(800, 100)
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -400.0
+offset_top = -150.0
+offset_right = 400.0
+grow_horizontal = 2
+grow_vertical = 0
+alignment = 1
+script = ExtResource("4_8ble6")
+
+[node name="cardUI" parent="battleUI/hand" instance=ExtResource("4_amugw")]
+layout_mode = 2
+
+[node name="cardUI2" parent="battleUI/hand" instance=ExtResource("4_amugw")]
+layout_mode = 2
+
+[node name="cardUI3" parent="battleUI/hand" instance=ExtResource("4_amugw")]
+layout_mode = 2

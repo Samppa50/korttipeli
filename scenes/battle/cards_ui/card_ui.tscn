@@ -1,0 +1,77 @@
+[gd_scene load_steps=9 format=3 uid="uid://dvptm3bvypude"]
+
+[ext_resource type="Theme" uid="uid://on4kexy3pw0s" path="res://themes/main_theme.tres" id="1_djf3o"]
+[ext_resource type="Script" path="res://scenes/battle/cards_ui/card_ui.gd" id="1_lllen"]
+[ext_resource type="Script" path="res://scenes/battle/cards_ui/card_state_machine.gd" id="3_nhe8l"]
+[ext_resource type="Script" path="res://scenes/battle/cards_ui/card_state/card_base_state.gd" id="4_ri4nc"]
+[ext_resource type="Script" path="res://scenes/battle/cards_ui/card_state/card_clicked_state.gd" id="5_va8h5"]
+[ext_resource type="Script" path="res://scenes/battle/cards_ui/card_state/card_dragging_state.gd" id="6_484sb"]
+[ext_resource type="Script" path="res://scenes/battle/cards_ui/card_state/card_released_state.gd" id="7_n6o4y"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2c0p7"]
+size = Vector2(60, 90)
+
+[node name="cardUI" type="Control"]
+custom_minimum_size = Vector2(60, 90)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -1092.0
+offset_bottom = -558.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_lllen")
+
+[node name="color" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0.886275, 0.239216, 0.278431, 1)
+
+[node name="state" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_djf3o")
+text = "State"
+
+[node name="droppoindetector" type="Area2D" parent="."]
+collision_mask = 2
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="droppoindetector"]
+position = Vector2(30, 45)
+shape = SubResource("RectangleShape2D_2c0p7")
+
+[node name="cardstatemachine" type="Node" parent="." node_paths=PackedStringArray("initial_state")]
+script = ExtResource("3_nhe8l")
+initial_state = NodePath("cardbasestate")
+
+[node name="cardbasestate" type="Node" parent="cardstatemachine"]
+script = ExtResource("4_ri4nc")
+
+[node name="cardclickedstate" type="Node" parent="cardstatemachine"]
+script = ExtResource("5_va8h5")
+state = 1
+
+[node name="carddraggingstate" type="Node" parent="cardstatemachine"]
+script = ExtResource("6_484sb")
+state = 2
+
+[node name="cardreleasedstate" type="Node" parent="cardstatemachine"]
+script = ExtResource("7_n6o4y")
+state = 4
+
+[connection signal="gui_input" from="." to="." method="_on_gui_input"]
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
+[connection signal="area_entered" from="droppoindetector" to="." method="_on_droppoindetector_area_entered"]
+[connection signal="area_exited" from="droppoindetector" to="." method="_on_droppoindetector_area_exited"]

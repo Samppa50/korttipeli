@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://dbysdqp1ojuut"]
+
+[ext_resource type="Texture2D" uid="uid://d3huj1aef45lv" path="res://art/TESTplayer.png" id="1_sxneo"]
+
+[node name="playerfight" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(3, 3)
+texture = ExtResource("1_sxneo")
