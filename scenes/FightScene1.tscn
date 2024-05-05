@@ -1,0 +1,25 @@
+[gd_scene load_steps=2 format=3 uid="uid://dtn8o3sshmkua"]
+
+[ext_resource type="Texture2D" uid="uid://bpo6ltoxyugi4" path="res://art/card1.png" id="1_7rmah"]
+
+[node name="FightScene1" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(386, 520)
+texture = ExtResource("1_7rmah")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(649, 522)
+texture = ExtResource("1_7rmah")
+
+[node name="Sprite2D3" type="Sprite2D" parent="."]
+position = Vector2(257, 522)
+texture = ExtResource("1_7rmah")
+
+[node name="Sprite2D4" type="Sprite2D" parent="."]
+position = Vector2(518, 524)
+texture = ExtResource("1_7rmah")
+
+[node name="Sprite2D5" type="Sprite2D" parent="."]
+position = Vector2(784, 525)
+texture = ExtResource("1_7rmah")
