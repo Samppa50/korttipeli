@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://bpes5bwjwttui"]
+
+[ext_resource type="Texture2D" uid="uid://safyqdgu6lm1" path="res://art/sankari.png" id="1_pjej2"]
+[ext_resource type="Script" path="res://scenes/battle/enemy/enemybasic.gd" id="1_u6pqb"]
+[ext_resource type="PackedScene" uid="uid://suilmqcgqhml" path="res://scenes/battle/stats_ui.tscn" id="2_vwwcw"]
+
+[node name="enemybasic" type="Node2D" groups=["enemies"]]
+script = ExtResource("1_u6pqb")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(3, 3)
+texture = ExtResource("1_pjej2")
+flip_h = true
+
+[node name="StatsUI" parent="." instance=ExtResource("2_vwwcw")]
+offset_top = -204.0
+offset_bottom = -104.0

@@ -1,10 +1,14 @@
-[gd_scene load_steps=7 format=3 uid="uid://dtn8o3sshmkua"]
+[gd_scene load_steps=11 format=3 uid="uid://dtn8o3sshmkua"]
 
 [ext_resource type="Texture2D" uid="uid://dxocmwdqywapg" path="res://art/megakeharibackground.png" id="1_kq5co"]
 [ext_resource type="PackedScene" uid="uid://dbysdqp1ojuut" path="res://scenes/battle/player/playerfight.tscn" id="2_58iix"]
-[ext_resource type="PackedScene" uid="uid://bpes5bwjwttui" path="res://scenes/battle/player/enemybasic.tscn" id="3_jwea3"]
+[ext_resource type="Resource" uid="uid://djosjrop0eaof" path="res://scenes/battle/player/player.tres" id="3_73kcw"]
+[ext_resource type="PackedScene" uid="uid://bpes5bwjwttui" path="res://scenes/battle/enemy/enemybasic.tscn" id="3_jwea3"]
 [ext_resource type="Script" path="res://scenes/battle/hand_ui/hand.gd" id="4_8ble6"]
 [ext_resource type="PackedScene" uid="uid://dvptm3bvypude" path="res://scenes/battle/cards_ui/card_ui.tscn" id="4_amugw"]
+[ext_resource type="Resource" uid="uid://cfsv7msx0uv1q" path="res://scenes/battle/enemy/basicenemy.tres" id="5_uoy5r"]
+[ext_resource type="Resource" uid="uid://cfh6jiraljfah" path="res://scenes/battle/player/playercards/playerattack.tres" id="6_o6lq4"]
+[ext_resource type="Resource" uid="uid://c5gld1ebub0ak" path="res://scenes/battle/player/playercards/playerblock.tres" id="7_5p0e3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hl3xg"]
 size = Vector2(1152, 437)
@@ -18,17 +22,20 @@ scale = Vector2(0.598177, 0.599074)
 texture = ExtResource("1_kq5co")
 
 [node name="playerfight" parent="." instance=ExtResource("2_58iix")]
-position = Vector2(86, 316)
+position = Vector2(168, 313)
+stats = ExtResource("3_73kcw")
 
 [node name="enemybasic" parent="." instance=ExtResource("3_jwea3")]
-position = Vector2(989, 356)
+position = Vector2(977, 312)
+stats = ExtResource("5_uoy5r")
 
 [node name="carddroparea" type="Area2D" parent="."]
 collision_layer = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="carddroparea"]
-position = Vector2(575, 219.5)
+position = Vector2(577, 220)
 shape = SubResource("RectangleShape2D_hl3xg")
+debug_color = Color(0, 0.513726, 0.6, 0.133333)
 
 [node name="battleUI" type="CanvasLayer" parent="." groups=["ui_layer"]]
 
@@ -49,9 +56,12 @@ script = ExtResource("4_8ble6")
 
 [node name="cardUI" parent="battleUI/hand" instance=ExtResource("4_amugw")]
 layout_mode = 2
+card = ExtResource("6_o6lq4")
 
 [node name="cardUI2" parent="battleUI/hand" instance=ExtResource("4_amugw")]
 layout_mode = 2
+card = ExtResource("6_o6lq4")
 
 [node name="cardUI3" parent="battleUI/hand" instance=ExtResource("4_amugw")]
 layout_mode = 2
+card = ExtResource("7_5p0e3")

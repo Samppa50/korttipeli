@@ -1,6 +1,6 @@
 extends cardstate
 
-const min_drag_threshold := 0.05
+const min_drag_threshold := 0.1
 var min_drag_time_elapsed := false
 
 func enter() -> void:

@@ -1,9 +1,16 @@
-[gd_scene load_steps=2 format=3 uid="uid://dbysdqp1ojuut"]
+[gd_scene load_steps=4 format=3 uid="uid://dbysdqp1ojuut"]
 
 [ext_resource type="Texture2D" uid="uid://d3huj1aef45lv" path="res://art/TESTplayer.png" id="1_sxneo"]
+[ext_resource type="Script" path="res://scenes/battle/player/playerfight.gd" id="1_whemq"]
+[ext_resource type="PackedScene" uid="uid://suilmqcgqhml" path="res://scenes/battle/stats_ui.tscn" id="2_a2xei"]
 
-[node name="playerfight" type="Node2D"]
+[node name="playerfight" type="Node2D" groups=["player"]]
+script = ExtResource("1_whemq")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(3, 3)
 texture = ExtResource("1_sxneo")
+
+[node name="StatsUI" parent="." instance=ExtResource("2_a2xei")]
+offset_top = -197.0
+offset_bottom = -97.0
