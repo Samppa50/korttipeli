@@ -14,6 +14,10 @@ config/name="cardgame"
 run/main_scene="res://scenes/openworld/level1.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 
+[autoload]
+
+Events="*res://global/events.gd"
+
 [input]
 
 left={

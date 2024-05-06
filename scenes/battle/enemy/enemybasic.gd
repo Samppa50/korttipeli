@@ -6,6 +6,11 @@ extends Node2D
 @onready var sprite_2d: Sprite2D = $Sprite2D
 @onready var stats_ui: StatsUI = $StatsUI as StatsUI
 
+#for testing
+#	await get_tree().create_timer(2).timeout
+#	take_damage(6)
+#	stats.block += 8
+
 
 func set_enemy_stats(value: Stats) -> void:
 	stats = value.create_instance()

@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://dtn8o3sshmkua"]
+[gd_scene load_steps=12 format=3 uid="uid://dtn8o3sshmkua"]
 
 [ext_resource type="Texture2D" uid="uid://dxocmwdqywapg" path="res://art/megakeharibackground.png" id="1_kq5co"]
 [ext_resource type="PackedScene" uid="uid://dbysdqp1ojuut" path="res://scenes/battle/player/playerfight.tscn" id="2_58iix"]
@@ -9,6 +9,7 @@
 [ext_resource type="Resource" uid="uid://cfsv7msx0uv1q" path="res://scenes/battle/enemy/basicenemy.tres" id="5_uoy5r"]
 [ext_resource type="Resource" uid="uid://cfh6jiraljfah" path="res://scenes/battle/player/playercards/playerattack.tres" id="6_o6lq4"]
 [ext_resource type="Resource" uid="uid://c5gld1ebub0ak" path="res://scenes/battle/player/playercards/playerblock.tres" id="7_5p0e3"]
+[ext_resource type="PackedScene" uid="uid://h2g07vhvrbse" path="res://scenes/battle/cards_ui/mana_ui.tscn" id="10_2kp6v"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hl3xg"]
 size = Vector2(1152, 437)
@@ -57,11 +58,17 @@ script = ExtResource("4_8ble6")
 [node name="cardUI" parent="battleUI/hand" instance=ExtResource("4_amugw")]
 layout_mode = 2
 card = ExtResource("6_o6lq4")
+char_stats = ExtResource("3_73kcw")
 
 [node name="cardUI2" parent="battleUI/hand" instance=ExtResource("4_amugw")]
 layout_mode = 2
 card = ExtResource("6_o6lq4")
+char_stats = ExtResource("3_73kcw")
 
 [node name="cardUI3" parent="battleUI/hand" instance=ExtResource("4_amugw")]
 layout_mode = 2
 card = ExtResource("7_5p0e3")
+char_stats = ExtResource("3_73kcw")
+
+[node name="ManaUI" parent="battleUI" instance=ExtResource("10_2kp6v")]
+char_stats = ExtResource("3_73kcw")

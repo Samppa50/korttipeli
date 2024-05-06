@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://suilmqcgqhml"]
+[gd_scene load_steps=5 format=3 uid="uid://suilmqcgqhml"]
 
 [ext_resource type="Theme" uid="uid://on4kexy3pw0s" path="res://themes/main_theme.tres" id="1_1pecl"]
 [ext_resource type="Script" path="res://scenes/battle/stats_ui.gd" id="2_0whxu"]
-[ext_resource type="Texture2D" uid="uid://c23v3a6k5idxd" path="res://art/Sprite-apple.png" id="2_ntkf7"]
+[ext_resource type="Texture2D" uid="uid://btvjhioq0tidi" path="res://art/block.png" id="3_a8h1h"]
+[ext_resource type="Texture2D" uid="uid://bh20h028s78a8" path="res://art/health.png" id="4_lpntw"]
 
 [node name="StatsUI" type="HBoxContainer"]
 anchors_preset = 5
@@ -24,7 +25,7 @@ theme_override_constants/separation = 0
 modulate = Color(0.14902, 0.462745, 1, 1)
 custom_minimum_size = Vector2(80, 80)
 layout_mode = 2
-texture = ExtResource("2_ntkf7")
+texture = ExtResource("3_a8h1h")
 stretch_mode = 5
 
 [node name="BlockLabel" type="Label" parent="Block"]
@@ -43,7 +44,7 @@ theme_override_constants/separation = 0
 modulate = Color(0.772549, 0.282353, 0.152941, 1)
 custom_minimum_size = Vector2(80, 80)
 layout_mode = 2
-texture = ExtResource("2_ntkf7")
+texture = ExtResource("4_lpntw")
 stretch_mode = 5
 
 [node name="HealthLabel" type="Label" parent="Health"]

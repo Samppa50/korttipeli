@@ -1,9 +1,6 @@
-[gd_resource type="Resource" script_class="Card" load_steps=2 format=3 uid="uid://cfh6jiraljfah"]
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://cfh6jiraljfah"]
 
-[ext_resource type="Script" path="res://custom_resources/card.gd" id="1_p125e"]
+[ext_resource type="Script" path="res://scenes/battle/player/playercards/playerattack.gd" id="1_td7n8"]
 
 [resource]
-script = ExtResource("1_p125e")
-id = ""
-type = 0
-target = 0
+script = ExtResource("1_td7n8")

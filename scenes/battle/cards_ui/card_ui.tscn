@@ -1,7 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://dvptm3bvypude"]
+[gd_scene load_steps=10 format=3 uid="uid://dvptm3bvypude"]
 
-[ext_resource type="Theme" uid="uid://on4kexy3pw0s" path="res://themes/main_theme.tres" id="1_djf3o"]
 [ext_resource type="Script" path="res://scenes/battle/cards_ui/card_ui.gd" id="1_lllen"]
+[ext_resource type="Texture2D" uid="uid://jg1w35iutuk3" path="res://art/Sprite-axe01.png" id="2_qgj8w"]
+[ext_resource type="StyleBox" uid="uid://bp0o073ia4h0e" path="res://scenes/battle/cards_ui/card_style.tres" id="2_skg5w"]
 [ext_resource type="Script" path="res://scenes/battle/cards_ui/card_state_machine.gd" id="3_nhe8l"]
 [ext_resource type="Script" path="res://scenes/battle/cards_ui/card_state/card_base_state.gd" id="4_ri4nc"]
 [ext_resource type="Script" path="res://scenes/battle/cards_ui/card_state/card_clicked_state.gd" id="5_va8h5"]
@@ -23,7 +24,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_lllen")
 
-[node name="color" type="ColorRect" parent="."]
+[node name="Panel" type="Panel" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -31,17 +32,34 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
-color = Color(0.886275, 0.239216, 0.278431, 1)
+theme_override_styles/panel = ExtResource("2_skg5w")
 
-[node name="state" type="Label" parent="."]
+[node name="Cost" type="Label" parent="."]
+custom_minimum_size = Vector2(30, 30)
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+offset_right = 40.0
+offset_bottom = 30.0
+text = "1"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Icon" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
 grow_horizontal = 2
 grow_vertical = 2
-theme = ExtResource("1_djf3o")
-text = "State"
+mouse_filter = 2
+texture = ExtResource("2_qgj8w")
+expand_mode = 1
+stretch_mode = 5
 
 [node name="droppoindetector" type="Area2D" parent="."]
 collision_mask = 2

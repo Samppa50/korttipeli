@@ -6,6 +6,13 @@ extends Node2D
 @onready var sprite_2d: Sprite2D = $Sprite2D
 @onready var stats_ui: StatsUI = $StatsUI as StatsUI
 
+#for testing
+#func _ready() -> void:
+#	await get_tree().create_timer(3).timeout
+#	take_damage(12)
+#	stats.block += 15
+
+
 func set_character_stats(value: CharacterStats) -> void:
 	stats = value.create_instance()
 	
@@ -32,6 +39,6 @@ func take_damage(damage) -> void:
 	
 	stats.take_damage(damage)
 	
-	if stats.healt <= 0:
+	if stats.health <= 0:
 		queue_free()
 		
