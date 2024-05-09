@@ -4,3 +4,8 @@
 
 [resource]
 script = ExtResource("1_r5u3n")
+id = ""
+type = 1
+target = 0
+cost = 0
+tooltip_text = ""
