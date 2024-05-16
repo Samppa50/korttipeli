@@ -10,6 +10,7 @@ const HOVER_STYLEBOX :=preload("res://scenes/battle/card_ui/hover_card_style.tre
 @export var card: Card : set = _set_card
 @export var char_stats: CharacterStats : set = _set_char_stats
 
+@onready var effect = $Effect
 @onready var cost = $Cost
 @onready var icon = $Icon
 @onready var panel = $Panel

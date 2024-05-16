@@ -21,6 +21,8 @@ func _process(delta):
 		a = wrapi(int(a), 0,8)
 		current_animation = "idle"
 	velocity = input_dir * speed
+	if Input.is_action_pressed("sprint"):
+		velocity *= 2
 	move_and_slide()
 
 

@@ -58,17 +58,20 @@ hand = NodePath("../BattleUI/Hand")
 script = ExtResource("8_o5s7w")
 
 [node name="Hand" type="HBoxContainer" parent="BattleUI"]
-custom_minimum_size = Vector2(800, 100)
+custom_minimum_size = Vector2(800, 150)
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
 offset_left = -400.0
-offset_top = -150.0
+offset_top = -152.0
 offset_right = 400.0
+offset_bottom = -2.0
 grow_horizontal = 2
 grow_vertical = 0
+size_flags_horizontal = 4
+size_flags_vertical = 4
 alignment = 1
 script = ExtResource("9_2o4nn")
 
