@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://c6nmkqvosr81c" path="res://art/Sprite-water-Sheet.png" id="2_a3gko"]
 [ext_resource type="PackedScene" uid="uid://sidvgbqie7pd" path="res://scenes/openworld/player.tscn" id="3_7itvc"]
 [ext_resource type="Script" path="res://scenes/openworld/scripts/Fight1.gd" id="4_fcb4b"]
-[ext_resource type="Texture2D" uid="uid://safyqdgu6lm1" path="res://art/sankari.png" id="5_msffw"]
+[ext_resource type="Texture2D" uid="uid://cu465ur2cyu6h" path="res://art/grindzombie.png" id="5_kt78e"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_do4rb"]
 texture = ExtResource("1_223ld")
@@ -101,9 +101,8 @@ shape = SubResource("CircleShape2D_6rjc0")
 
 [node name="Sprite2D" type="Sprite2D" parent="Area2D"]
 position = Vector2(445, 64)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("5_msffw")
-flip_h = true
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("5_kt78e")
 
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
 [connection signal="body_exited" from="Area2D" to="Area2D" method="_on_body_exited"]

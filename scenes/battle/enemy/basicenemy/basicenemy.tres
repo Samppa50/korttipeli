@@ -2,10 +2,10 @@
 
 [ext_resource type="Script" path="res://custom_resources/enemy_stats.gd" id="1_6lalt"]
 [ext_resource type="PackedScene" uid="uid://b2ne7ddiqcyam" path="res://scenes/battle/enemy/basicenemy/basic_enemy_ai.tscn" id="1_ei8ko"]
-[ext_resource type="Texture2D" uid="uid://safyqdgu6lm1" path="res://art/sankari.png" id="1_vy74u"]
+[ext_resource type="Texture2D" uid="uid://cu465ur2cyu6h" path="res://art/grindzombie.png" id="2_ox7o6"]
 
 [resource]
 script = ExtResource("1_6lalt")
 ai = ExtResource("1_ei8ko")
 max_health = 12
-art = ExtResource("1_vy74u")
+art = ExtResource("2_ox7o6")

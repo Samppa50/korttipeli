@@ -7,7 +7,6 @@ extends Node2D
 @onready var enemy_handler: EnemyHandler = $EnemyHandler as EnemyHandler
 @onready var player: PlayerFight = $PlayerFight as PlayerFight
 
-#tarkista player onready
 
 
 func _ready() -> void:
