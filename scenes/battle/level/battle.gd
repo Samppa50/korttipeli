@@ -33,6 +33,7 @@ func _on_enemies_child_order_changed() -> void:
 	if enemy_handler.get_child_count() == 0:
 		print("you won!")
 		#tähän tulee ohjaus takaisin overworldiin!
+		await get_tree().create_timer(1).timeout
 		get_tree().change_scene_to_file("res://scenes/openworld/alotushuonetesti_1.tscn")
 	
 func _on_enemy_turn_ended() -> void:
@@ -42,4 +43,4 @@ func _on_enemy_turn_ended() -> void:
 func _on_player_died() -> void:
 	print("you lost!")
 	#tähän tulee häviö homma 
-	get_tree().change_scene_to_file("res://scenes/openworld/level1.tscn")
+
