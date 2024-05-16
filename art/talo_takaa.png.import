@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bpjwxt4rysvm3"
-path="res://.godot/imported/kirkko.png-d93882ab1ea861894451a576bca62566.ctex"
+uid="uid://cfvxp4fwog62x"
+path="res://.godot/imported/talo_takaa.png-e65fba70080fb5d54cf38c46427ca185.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/kirkko.png"
-dest_files=["res://.godot/imported/kirkko.png-d93882ab1ea861894451a576bca62566.ctex"]
+source_file="res://art/talo_takaa.png"
+dest_files=["res://.godot/imported/talo_takaa.png-e65fba70080fb5d54cf38c46427ca185.ctex"]
 
 [params]
 

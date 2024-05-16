@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c302ku60s1dei"
-path="res://.godot/imported/talo1.png-38b392ae4e9ea67ed6f7fbe4148eb165.ctex"
+uid="uid://dp62g7reip6el"
+path="res://.godot/imported/talointeriort.png-d50e64c044e9f63b4afb6332ddaf9186.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/talo1.png"
-dest_files=["res://.godot/imported/talo1.png-38b392ae4e9ea67ed6f7fbe4148eb165.ctex"]
+source_file="res://art/talointeriort.png"
+dest_files=["res://.godot/imported/talointeriort.png-d50e64c044e9f63b4afb6332ddaf9186.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://72hnvo6g2v1i"
-path="res://.godot/imported/kirkko.png-eca4d311a17e4ed89db6233ec4b75c89.ctex"
+uid="uid://cxccehgatehtu"
+path="res://.godot/imported/cobble-Sheet.png-e0565904a22818f931136a7311bfdd9b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://kirkko.png"
-dest_files=["res://.godot/imported/kirkko.png-eca4d311a17e4ed89db6233ec4b75c89.ctex"]
+source_file="res://art/cobble-Sheet.png"
+dest_files=["res://.godot/imported/cobble-Sheet.png-e0565904a22818f931136a7311bfdd9b.ctex"]
 
 [params]
 

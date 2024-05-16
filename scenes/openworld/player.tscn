@@ -18,17 +18,18 @@ animations = [{
 "speed": 1.0
 }]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_nglkk"]
-radius = 18.0
-height = 62.0
+[sub_resource type="CircleShape2D" id="CircleShape2D_c50lx"]
+radius = 13.0384
 
 [node name="player" type="CharacterBody2D"]
+y_sort_enabled = true
 script = ExtResource("1_cj6my")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_gwvdq")
 animation = &"idle"
+offset = Vector2(0, -30)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 3)
-shape = SubResource("CapsuleShape2D_nglkk")
+position = Vector2(0, -12)
+shape = SubResource("CircleShape2D_c50lx")
