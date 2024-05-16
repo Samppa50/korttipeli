@@ -1,0 +1,4 @@
+[gd_scene format=3 uid="uid://bolfmxt5q57e7"]
+
+[node name="CardArc" type="Line2D"]
+points = PackedVector2Array(136, 552, 300, 382, 434, 316, 603, 269, 740, 235)

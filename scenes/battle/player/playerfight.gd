@@ -1,20 +1,14 @@
-class_name Player
+class_name PlayerFight
 extends Node2D
 
 @export var stats: CharacterStats : set = set_character_stats
 
 @onready var sprite_2d: Sprite2D = $Sprite2D
-@onready var stats_ui: StatsUI = $StatsUI as StatsUI
-
-#for testing
-#func _ready() -> void:
-#	await get_tree().create_timer(3).timeout
-#	take_damage(12)
-#	stats.block += 15
+@onready var stats_ui: StatsUI = $StatsUI
 
 
 func set_character_stats(value: CharacterStats) -> void:
-	stats = value.create_instance()
+	stats = value
 	
 	if not stats.stats_changed.is_connected(update_stats):
 		stats.stats_changed.connect(update_stats)
@@ -39,6 +33,8 @@ func take_damage(damage) -> void:
 	
 	stats.take_damage(damage)
 	
+	
 	if stats.health <= 0:
+		Events.player_died.emit()
 		queue_free()
 		

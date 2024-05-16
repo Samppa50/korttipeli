@@ -1,10 +1,12 @@
-class_name ManaUi
+class_name ManaUI
 extends Panel
 
 @export var char_stats: CharacterStats : set = _set_char_stats
 
 @onready var mana_label: Label = $ManaLabel
 
+func _ready() -> void:
+	pass
 
 func _set_char_stats(value: CharacterStats) -> void:
 	char_stats = value

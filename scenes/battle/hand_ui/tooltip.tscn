@@ -1,0 +1,43 @@
+[gd_scene load_steps=4 format=3 uid="uid://bahe2hmxowoal"]
+
+[ext_resource type="Theme" uid="uid://on4kexy3pw0s" path="res://themes/main_theme.tres" id="1_6llbg"]
+[ext_resource type="Texture2D" uid="uid://jg1w35iutuk3" path="res://art/Sprite-axe01.png" id="2_amvf2"]
+[ext_resource type="Script" path="res://scenes/battle/hand_ui/tooltip.gd" id="2_hew5f"]
+
+[node name="Tooltip" type="PanelContainer"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -150.0
+offset_top = 20.0
+offset_right = 150.0
+offset_bottom = 120.0
+grow_horizontal = 2
+theme = ExtResource("1_6llbg")
+script = ExtResource("2_hew5f")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="TooltipIcon" type="TextureRect" parent="MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+texture = ExtResource("2_amvf2")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="TooltipText" type="RichTextLabel" parent="MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+bbcode_enabled = true
+text = "Axe hurts enemy...
+Axe hurts enemy..."

@@ -6,7 +6,7 @@ extends Node
 var current_state: cardstate
 var states := {}
 
-func init(card: cardUI) -> void:
+func init(card: CardUI) -> void:
 	for child in get_children():
 		if child is cardstate:
 			states[child.state] = child

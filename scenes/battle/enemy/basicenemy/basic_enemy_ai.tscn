@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://b2ne7ddiqcyam"]
+
+[ext_resource type="Script" path="res://scenes/battle/enemy/enemy_action_picker.gd" id="1_p4wjs"]
+[ext_resource type="Script" path="res://scenes/battle/enemy/basicenemy/basic_attack_action.gd" id="2_3j0g0"]
+[ext_resource type="Script" path="res://scenes/battle/enemy/basicenemy/basic_block_action.gd" id="3_diqfq"]
+[ext_resource type="Script" path="res://scenes/battle/enemy/basicenemy/basic_megablock_action.gd" id="4_hacs3"]
+
+[node name="BasicEnemyAI" type="Node"]
+script = ExtResource("1_p4wjs")
+
+[node name="AttackAction" type="Node" parent="."]
+script = ExtResource("2_3j0g0")
+type = 1
+chance_weight = 1.0
+
+[node name="BlockAction" type="Node" parent="."]
+script = ExtResource("3_diqfq")
+block = 5
+type = 1
+chance_weight = 1.0
+
+[node name="MegaBlockAction" type="Node" parent="."]
+script = ExtResource("4_hacs3")
+block = 12
