@@ -1,6 +1,7 @@
-[gd_scene load_steps=12 format=3 uid="uid://dtn8o3sshmkua"]
+[gd_scene load_steps=15 format=3 uid="uid://dtn8o3sshmkua"]
 
 [ext_resource type="Texture2D" uid="uid://dxocmwdqywapg" path="res://art/megakeharibackground.png" id="1_kq5co"]
+[ext_resource type="Script" path="res://scenes/battle/level/FightScene1.gd" id="1_v3ett"]
 [ext_resource type="PackedScene" uid="uid://dbysdqp1ojuut" path="res://scenes/battle/player/playerfight.tscn" id="2_58iix"]
 [ext_resource type="Resource" uid="uid://djosjrop0eaof" path="res://scenes/battle/player/player.tres" id="3_73kcw"]
 [ext_resource type="PackedScene" uid="uid://bpes5bwjwttui" path="res://scenes/battle/enemy/enemybasic.tscn" id="3_jwea3"]
@@ -8,13 +9,17 @@
 [ext_resource type="PackedScene" uid="uid://dvptm3bvypude" path="res://scenes/battle/cards_ui/card_ui.tscn" id="4_amugw"]
 [ext_resource type="Resource" uid="uid://cfsv7msx0uv1q" path="res://scenes/battle/enemy/basicenemy.tres" id="5_uoy5r"]
 [ext_resource type="Resource" uid="uid://cfh6jiraljfah" path="res://scenes/battle/player/playercards/playerattack.tres" id="6_o6lq4"]
+[ext_resource type="Script" path="res://scenes/battle/battle_ui.gd" id="6_yyk8n"]
 [ext_resource type="Resource" uid="uid://c5gld1ebub0ak" path="res://scenes/battle/player/playercards/playerblock.tres" id="7_5p0e3"]
 [ext_resource type="PackedScene" uid="uid://h2g07vhvrbse" path="res://scenes/battle/cards_ui/mana_ui.tscn" id="10_2kp6v"]
+[ext_resource type="PackedScene" uid="uid://bahe2hmxowoal" path="res://scenes/battle/hand_ui/tooltip.tscn" id="11_7nk7n"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hl3xg"]
 size = Vector2(1152, 437)
 
 [node name="FightScene1" type="Node2D"]
+script = ExtResource("1_v3ett")
+char_stats = ExtResource("3_73kcw")
 
 [node name="background" type="Sprite2D" parent="."]
 modulate = Color(0.737255, 0.737255, 0.737255, 1)
@@ -39,6 +44,7 @@ shape = SubResource("RectangleShape2D_hl3xg")
 debug_color = Color(0, 0.513726, 0.6, 0.133333)
 
 [node name="battleUI" type="CanvasLayer" parent="." groups=["ui_layer"]]
+script = ExtResource("6_yyk8n")
 
 [node name="hand" type="HBoxContainer" parent="battleUI"]
 custom_minimum_size = Vector2(800, 100)
@@ -72,3 +78,5 @@ char_stats = ExtResource("3_73kcw")
 
 [node name="ManaUI" parent="battleUI" instance=ExtResource("10_2kp6v")]
 char_stats = ExtResource("3_73kcw")
+
+[node name="Tooltip" parent="battleUI" instance=ExtResource("11_7nk7n")]

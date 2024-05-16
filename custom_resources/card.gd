@@ -2,7 +2,7 @@ class_name Card
 extends Resource
 
 enum Type {ATTACK, DEFEND, BUFF, DEBUFF}
-enum Target {SELF, ENEMY}
+enum Target {SELF, ENEMY, SINGLE_ENEMY}
 
 @export_group("Card Attributes")
 @export var id: String
@@ -16,6 +16,9 @@ enum Target {SELF, ENEMY}
 
 func is_enemy_targeted() -> bool:
 	return target == Target.ENEMY
+	
+func is_single_targeted() -> bool:
+	return target == Target.SINGLE_ENEMY
 
 func _get_targets(targets: Array[Node]) -> Array[Node]:
 	if not targets:
@@ -34,7 +37,12 @@ func _get_targets(targets: Array[Node]) -> Array[Node]:
 func play(targets: Array[Node], char_stats: CharacterStats) -> void:
 	Events.card_played.emit(self)
 	char_stats.mana -= cost
-	apply_effects(_get_targets(targets))
+	
+	if is_single_targeted():
+		apply_effects(targets)
+	else:
+		apply_effects(_get_targets(targets))
+
 
 func apply_effects(_targets: Array[Node]) -> void:
 	pass

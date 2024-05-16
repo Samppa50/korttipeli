@@ -1,7 +1,50 @@
-[gd_resource type="Theme" load_steps=2 format=3 uid="uid://on4kexy3pw0s"]
+[gd_resource type="Theme" load_steps=6 format=3 uid="uid://on4kexy3pw0s"]
 
-[ext_resource type="StyleBox" uid="uid://bp0o073ia4h0e" path="res://scenes/battle/cards_ui/card_style.tres" id="1_ll6ii"]
+[ext_resource type="StyleBox" uid="uid://xypyl8d4du2g" path="res://scenes/battle/card_ui/hover_card_style.tres" id="1_gx3gw"]
+[ext_resource type="StyleBox" uid="uid://bp0o073ia4h0e" path="res://scenes/battle/card_ui/card_style.tres" id="1_ll6ii"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_i17oy"]
+bg_color = Color(0.709804, 0.572549, 0.384314, 0.666667)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.384314, 0.188235, 0.0235294, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_pmy8k"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2ubc8"]
+bg_color = Color(0.709804, 0.572549, 0.384314, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.658824, 0.784314, 0, 1)
 
 [resource]
-default_font_size = 8
+default_font_size = 12
+Button/colors/font_color = Color(0, 0, 0, 1)
+Button/colors/font_disabled_color = Color(0, 0, 0, 1)
+Button/colors/font_focus_color = Color(0, 0, 0, 1)
+Button/colors/font_hover_color = Color(0, 0, 0, 1)
+Button/colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+Button/colors/font_outline_color = Color(0, 0, 0, 1)
+Button/colors/font_pressed_color = Color(0, 0, 0, 1)
+Button/colors/icon_disabled_color = Color(0, 0, 0, 1)
+Button/colors/icon_focus_color = Color(0, 0, 0, 1)
+Button/colors/icon_hover_color = Color(0, 0, 0, 1)
+Button/colors/icon_hover_pressed_color = Color(0, 0, 0, 1)
+Button/colors/icon_normal_color = Color(0, 0, 0, 1)
+Button/colors/icon_pressed_color = Color(0, 0, 0, 1)
+Button/constants/h_separation = 0
+Button/constants/icon_max_width = 0
+Button/constants/outline_size = 0
+Button/font_sizes/font_size = 12
+Button/fonts/font = null
+Button/styles/disabled = SubResource("StyleBoxFlat_i17oy")
+Button/styles/focus = SubResource("StyleBoxEmpty_pmy8k")
+Button/styles/hover = ExtResource("1_gx3gw")
+Button/styles/normal = ExtResource("1_ll6ii")
+Button/styles/pressed = SubResource("StyleBoxFlat_2ubc8")
 Panel/styles/panel = ExtResource("1_ll6ii")
+PanelContainer/styles/panel = ExtResource("1_ll6ii")

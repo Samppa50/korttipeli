@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://72hnvo6g2v1i"
-path="res://.godot/imported/kirkko.png-eca4d311a17e4ed89db6233ec4b75c89.ctex"
+uid="uid://b37lk3y4erble"
+path="res://.godot/imported/cardoverlayedgemax.png-b8e15defb7e4dc340b0890a3fad88757.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://kirkko.png"
-dest_files=["res://.godot/imported/kirkko.png-eca4d311a17e4ed89db6233ec4b75c89.ctex"]
+source_file="res://art/cardoverlayedgemax.png"
+dest_files=["res://.godot/imported/cardoverlayedgemax.png-b8e15defb7e4dc340b0890a3fad88757.ctex"]
 
 [params]
 

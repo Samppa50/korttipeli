@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://ccegeiayxpvoy"]
+
+[ext_resource type="Script" path="res://scenes/battle/card_ui/card_target_selector.gd" id="1_ijtj7"]
+[ext_resource type="PackedScene" uid="uid://bolfmxt5q57e7" path="res://scenes/battle/card_ui/card_arc.tscn" id="1_nudos"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ld8ey"]
+size = Vector2(10, 10)
+
+[node name="CardTargetSelector" type="Node2D"]
+script = ExtResource("1_ijtj7")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_mask = 4
+monitoring = false
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_ld8ey")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 2
+
+[node name="CardArc" parent="CanvasLayer" instance=ExtResource("1_nudos")]
+visible = false
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]
