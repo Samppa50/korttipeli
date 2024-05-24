@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://buyeyvy33h0bd"]
+[gd_scene load_steps=26 format=3 uid="uid://buyeyvy33h0bd"]
 
 [ext_resource type="Texture2D" uid="uid://ijccoth3a5oq" path="res://art/concrete-Sheet.png" id="1_kl3tv"]
 [ext_resource type="Texture2D" uid="uid://pkl14mroeivj" path="res://art/objects.png" id="1_njyhq"]
@@ -11,6 +11,8 @@
 [ext_resource type="Texture2D" uid="uid://cfvxp4fwog62x" path="res://art/talo_takaa.png" id="6_r0ss2"]
 [ext_resource type="Texture2D" uid="uid://cxccehgatehtu" path="res://art/cobble-Sheet.png" id="6_u50ko"]
 [ext_resource type="Texture2D" uid="uid://cflx5pd2mxnf1" path="res://art/aita123.png" id="8_ckl5d"]
+[ext_resource type="Script" path="res://scenes/openworld/road1door.gd" id="12_nakjt"]
+[ext_resource type="PackedScene" uid="uid://dlytc1av5e1wa" path="res://scenes/openworld/road1.tscn" id="13_quu7b"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_brmwy"]
 texture = ExtResource("1_kl3tv")
@@ -235,6 +237,9 @@ sources/9 = SubResource("TileSetAtlasSource_vg8dx")
 sources/10 = SubResource("TileSetAtlasSource_50f7t")
 sources/12 = SubResource("TileSetAtlasSource_875l6")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jh74y"]
+size = Vector2(154, 52)
+
 [node name="alotushuonetesti1" type="Node2D"]
 y_sort_enabled = true
 
@@ -254,3 +259,11 @@ layer_2/tile_data = PackedInt32Array(131073, 65538, 0, 131074, 65538, 0, 131075,
 position = Vector2(1031, 558)
 
 [node name="Camera2D" type="Camera2D" parent="player"]
+
+[node name="road1door" type="Area2D" parent="."]
+script = ExtResource("12_nakjt")
+new_scene = ExtResource("13_quu7b")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="road1door"]
+position = Vector2(897, 6)
+shape = SubResource("RectangleShape2D_jh74y")
