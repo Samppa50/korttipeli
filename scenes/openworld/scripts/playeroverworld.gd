@@ -1,8 +1,10 @@
-extends CharacterBody2D
+class_name Player extends CharacterBody2D
 
 @export var move_speed : float = 100
+@export var input_enabled:bool = true
 
-@onready var anim = $player
+
+@onready var anim = $Player
 
 
 var angle = 0
@@ -26,8 +28,11 @@ func _process(delta):
 	move_and_slide()
 
 
-
-
-func Paavo():
-	pass
+func disable():
+	input_enabled = false
+	current_animation = "idle"
+	
+func enable():
+	input_enabled = true
+	visible = true
 
