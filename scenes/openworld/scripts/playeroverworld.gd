@@ -23,7 +23,7 @@ func _process(delta):
 		a = wrapi(int(a), 0,8)
 		current_animation = "walk"
 	velocity = input_dir * speed
-	if Input.is_action_pressed("sprint"):
+	if Input.is_action_pressed("sprint") && input_dir.length() != 0:
 		velocity *= 2
 		current_animation = "run"
 		
