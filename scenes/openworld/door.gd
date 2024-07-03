@@ -7,6 +7,8 @@ signal player_entered_door(door: Door,transition_type: String)
 @export var push_distance:int = 16
 @export var path_to_new_scene:String
 @export var entry_door_name:String
+@export var teleport_posx:int = 0
+@export var teleport_posy:int = 0
 
 
 func _on_body_entered(body: Node2D) -> void:
