@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://c0fs7jhqlwod8"]
+
+[ext_resource type="PackedScene" uid="uid://cgroda706y8f5" path="res://scenes/Shop/shop.tscn" id="1_mk52l"]
+
+[node name="ShopUI" type="CanvasLayer"]
+
+[node name="Shop" parent="." instance=ExtResource("1_mk52l")]
+position = Vector2(-1, 0)

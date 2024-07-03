@@ -1,0 +1,91 @@
+[gd_scene load_steps=7 format=3 uid="uid://cgroda706y8f5"]
+
+[ext_resource type="Script" path="res://scenes/Shop/shop.gd" id="1_u6q57"]
+[ext_resource type="Texture2D" uid="uid://b48o8ho1xfh18" path="res://art/Shop_B_Axe.png" id="1_uhdem"]
+[ext_resource type="Texture2D" uid="uid://b3274mv1sq6t7" path="res://art/Shop_S_Sword.png" id="2_7p6q6"]
+[ext_resource type="Texture2D" uid="uid://jkjcqyya0egr" path="res://art/Shop_I_Mace.png" id="3_dbom7"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3cc6v"]
+bg_color = Color(1.03481e-06, 0.559215, 0.20701, 1)
+border_width_left = 20
+border_width_top = 20
+border_width_right = 20
+border_width_bottom = 20
+border_color = Color(0.635294, 0.270588, 0.164706, 1)
+border_blend = true
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_icq5v"]
+bg_color = Color(0.784314, 0.490196, 0.00392157, 1)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(0.403922, 0.231373, 0.0980392, 1)
+border_blend = true
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[node name="Shop" type="Node2D"]
+script = ExtResource("1_u6q57")
+
+[node name="background" type="Panel" parent="."]
+offset_left = 128.0
+offset_top = 64.0
+offset_right = 960.0
+offset_bottom = 512.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_3cc6v")
+
+[node name="DMGUP" type="Panel" parent="."]
+offset_left = 256.0
+offset_top = 128.0
+offset_right = 832.0
+offset_bottom = 320.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_icq5v")
+
+[node name="AXEButton" type="Button" parent="DMGUP"]
+layout_mode = 0
+offset_left = 40.0
+offset_top = 32.0
+offset_right = 168.0
+offset_bottom = 160.0
+
+[node name="SWORDButton" type="Button" parent="DMGUP"]
+layout_mode = 0
+offset_left = 408.0
+offset_top = 32.0
+offset_right = 536.0
+offset_bottom = 160.0
+
+[node name="MACEButton" type="Button" parent="DMGUP"]
+layout_mode = 0
+offset_left = 224.0
+offset_top = 32.0
+offset_right = 352.0
+offset_bottom = 160.0
+
+[node name="ShopBAxe" type="Sprite2D" parent="."]
+position = Vector2(360, 224)
+texture = ExtResource("1_uhdem")
+
+[node name="ShopSSword" type="Sprite2D" parent="."]
+position = Vector2(728, 224)
+texture = ExtResource("2_7p6q6")
+
+[node name="ShopIMace" type="Sprite2D" parent="."]
+position = Vector2(544, 224)
+texture = ExtResource("3_dbom7")
+
+[node name="Close" type="Button" parent="."]
+offset_left = 768.0
+offset_top = 424.0
+offset_right = 880.0
+offset_bottom = 480.0
+text = "Close"
+
+[connection signal="pressed" from="Close" to="." method="_on_close_pressed"]

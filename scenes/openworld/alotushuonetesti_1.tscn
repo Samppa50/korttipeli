@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://buyeyvy33h0bd"]
+[gd_scene load_steps=28 format=3 uid="uid://buyeyvy33h0bd"]
 
 [ext_resource type="Texture2D" uid="uid://ijccoth3a5oq" path="res://art/concrete-Sheet.png" id="1_kl3tv"]
 [ext_resource type="Texture2D" uid="uid://pkl14mroeivj" path="res://art/objects.png" id="1_njyhq"]
@@ -13,6 +13,8 @@
 [ext_resource type="Texture2D" uid="uid://cxccehgatehtu" path="res://art/cobble-Sheet.png" id="6_u50ko"]
 [ext_resource type="Texture2D" uid="uid://cflx5pd2mxnf1" path="res://art/aita123.png" id="8_ckl5d"]
 [ext_resource type="PackedScene" uid="uid://b35asug5y2j6i" path="res://scenes/openworld/door.tscn" id="13_c3c5a"]
+[ext_resource type="Script" path="res://scenes/openworld/Market1.gd" id="15_hn3wt"]
+[ext_resource type="PackedScene" uid="uid://cgroda706y8f5" path="res://scenes/Shop/shop.tscn" id="16_db2km"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_brmwy"]
 texture = ExtResource("1_kl3tv")
@@ -237,6 +239,9 @@ sources/9 = SubResource("TileSetAtlasSource_vg8dx")
 sources/10 = SubResource("TileSetAtlasSource_50f7t")
 sources/12 = SubResource("TileSetAtlasSource_875l6")
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_ld2yi"]
+radius = 52.0
+
 [node name="alotushuonetesti1" type="Node2D" node_paths=PackedStringArray("player", "doors")]
 y_sort_enabled = true
 script = ExtResource("1_p287q")
@@ -256,7 +261,7 @@ layer_2/y_sort_enabled = true
 layer_2/tile_data = PackedInt32Array(131073, 65538, 0, 131074, 65538, 0, 131075, 65538, 0, 131076, 65538, 0, 131077, 65538, 0, 131078, 65538, 0, 131079, 65538, 0, 131080, 65538, 0, 131081, 65538, 0, 131082, 65538, 0, 131083, 65538, 0, 589824, 9, 0, 524288, 262146, 0, 458752, 262146, 0, 393216, 262146, 0, 327680, 262146, 0, 262144, 262146, 0, 196608, 262146, 0, 131072, 9, 0, 131084, 196610, 0, 196620, 262146, 0, 262156, 262146, 0, 524300, 262146, 0, 458764, 262146, 0, 589836, 131074, 0, 589835, 65538, 0, 589834, 65538, 0, 589833, 65538, 0, 589832, 65538, 0, 589831, 65538, 0, 589830, 65538, 0, 589829, 65538, 0, 589828, 65538, 0, 589827, 65538, 0, 589826, 65538, 0, 589825, 65538, 0, 458761, 2, 0, 327689, 2, 0, 262150, 2, 0, 262146, 2, 0, 458754, 2, 0, 393220, 2, 0, 851974, 2, 4, 917522, 327682, 0, 655378, 327682, 0, 1376266, 6, 0, 1376261, 6, 0, 655360, 262146, 0, 720896, 262146, 0, 786432, 262146, 0, 851968, 262146, 0, 917504, 262146, 0, 983040, 262146, 0, 1048576, 262146, 0, 1114112, 262146, 0, 1179648, 262146, 0, 1245184, 262146, 0, 1310720, 262146, 0, 1376256, 262146, 0, 1441792, 262146, 0, 1507328, 262146, 0, 1572864, 262146, 0, 1638400, 262146, 0, 1703936, 262146, 0, 1769472, 262146, 0, 1835008, 262146, 0, 1, 65538, 0, 2, 65538, 0, 3, 65538, 0, 4, 65538, 0, 5, 65538, 0, 6, 65538, 0, 7, 65538, 0, 8, 65538, 0, 9, 65538, 0, 10, 65538, 0, 11, 65538, 0, 12, 65538, 0, 15, 65538, 0, 16, 65538, 0, 17, 65538, 0, 18, 65538, 0, 19, 65538, 0, 20, 65538, 0, 21, 65538, 0, 22, 65538, 0, 23, 65538, 0, 24, 65538, 0, 25, 65538, 0, 26, 65538, 0, 27, 65538, 0, 28, 65538, 0, 29, 65538, 0, 1900545, 65538, 0, 1900546, 65538, 0, 1900547, 65538, 0, 1900548, 65538, 0, 1900549, 65538, 0, 1900550, 65538, 0, 1900551, 65538, 0, 1900552, 65538, 0, 1900553, 65538, 0, 1900554, 65538, 0, 1900555, 65538, 0, 1900556, 65538, 0, 1900557, 65538, 0, 1900544, 131074, 268435456, 65536, 262146, 0, 0, 196610, 268435456, 1900558, 65538, 0, 1900559, 65538, 0, 1900560, 65538, 0, 1900561, 65538, 0, 1900562, 65538, 0, 1900563, 65538, 0, 1900564, 65538, 0, 1900565, 65538, 0, 1900566, 65538, 0, 1900567, 65538, 0, 65566, 262146, 0, 131102, 262146, 0, 196638, 262146, 0, 262174, 262146, 0, 327710, 262146, 0, 393246, 262146, 0, 458782, 262146, 0, 524318, 262146, 0, 589854, 262146, 0, 655390, 262146, 0, 720926, 262146, 0, 786462, 262146, 0, 851998, 262146, 0, 917534, 262146, 0, 983070, 262146, 0, 1048606, 262146, 0, 1114142, 262146, 0, 1179678, 262146, 0, 1245214, 262146, 0, 1310750, 262146, 0, 1376286, 262146, 0, 1507358, 262146, 0, 1441822, 262146, 0, 1572894, 262146, 0, 1638430, 262146, 0, 1703966, 262146, 0, 1769502, 262146, 0, 1835038, 262146, 0, 1900568, 65538, 0, 1900569, 65538, 0, 1900570, 65538, 0, 1900571, 65538, 0, 1900572, 65538, 0, 1900573, 65538, 0, 1900574, 131074, 0, 30, 196610, 0, 1638417, 6, 0, 1638422, 6, 0, 1638427, 6, 0, 1179666, 327682, 0, 131089, 10, 0, 131090, 65546, 0, 393236, 10, 0, 393237, 65546, 0, 65556, 12, 0, 131092, 12, 1, 65557, 65548, 0, 131093, 65548, 1, 327697, 12, 0, 393233, 12, 1, 327698, 65548, 0, 393234, 65548, 1)
 
 [node name="Player" parent="." instance=ExtResource("5_y5l50")]
-position = Vector2(1031, 558)
+position = Vector2(906, 299)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 
@@ -266,3 +271,20 @@ entry_dir = 0
 transition_type = "fade_to_black"
 path_to_new_scene = "res://scenes/openworld/level1.tscn"
 entry_door_name = "NorthDoor"
+
+[node name="Market1" type="Area2D" parent="."]
+position = Vector2(1344, 287)
+script = ExtResource("15_hn3wt")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Market1"]
+position = Vector2(-1, 1)
+shape = SubResource("CircleShape2D_ld2yi")
+
+[node name="Shop" parent="Market1" instance=ExtResource("16_db2km")]
+top_level = true
+position = Vector2(777, -18)
+
+[connection signal="body_entered" from="Market1" to="Market1" method="_on_body_entered"]
+[connection signal="body_exited" from="Market1" to="Market1" method="_on_body_exited"]
+[connection signal="movementlock" from="Market1" to="Player" method="_on_market_1_movementlock"]
+[connection signal="movementresume" from="Market1/Shop" to="Player" method="_on_shop_movementresume"]
