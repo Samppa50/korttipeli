@@ -11,7 +11,7 @@ var angle = 0
 var current_animation = "idle"
 var a = 0			#animaatioita varten
 var speed = 200
-
+var gold = 0
 
 
 func _process(delta):
@@ -40,3 +40,11 @@ func enable():
 	input_enabled = true
 	visible = true
 
+
+
+func _on_market_1_movementlock():
+	speed = 0
+
+
+func _on_shop_movementresume():
+	speed = 200
