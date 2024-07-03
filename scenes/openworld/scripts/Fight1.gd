@@ -13,4 +13,5 @@ func _on_body_exited(body):
 func _process(delta):
 	if entered == true:
 		if Input.is_action_just_pressed("use"):
-			get_tree().change_scene_to_file("res://scenes/battle/level/battle.tscn")
+			#get_tree().change_scene_to_file("res://scenes/battle/level/battle.tscn")
+			SceneManager.load_new_scene("res://scenes/battle/level/battle.tscn","fade_to_black")

@@ -6,7 +6,7 @@ var data:LevelDataHandoff
 
 func _ready() -> void:
 	player.disable()
-	player.visible = false
+	#player.visible = false
 	if data == null:
 		enter_level()
 	
