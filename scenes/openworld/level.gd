@@ -11,16 +11,19 @@ func _ready() -> void:
 		enter_level()
 	
 func enter_level() -> void:
-	if data != null:
-		init_player_location()
+	init_player_location()
 	player.enable()
 	_connect_to_doors()
 	
 func init_player_location() -> void:
 	if data != null:
 		for door in doors:
-			if door.name == data.entry_door_name:
-				player.position = door.get_player_entry_pos()
+			$Player.position.x = door.teleport_posx
+			$Player.position.y = door.teleport_posy
+	#if data != null:
+	#	for door in doors:
+	#		if door.name == data.entry_door_name:
+	#			player.position = door.get_player_entry_pos()
 
 func _on_player_entered_door(door:Door) -> void:
 	_disconnect_from_doors()
