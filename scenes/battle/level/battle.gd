@@ -33,7 +33,8 @@ func _on_enemies_child_order_changed() -> void:
 		print("you won!")
 		#tähän tulee ohjaus takaisin overworldiin!
 		await get_tree().create_timer(1).timeout
-		get_tree().change_scene_to_file("res://scenes/openworld/alotushuonetesti_1.tscn")
+		#get_tree().change_scene_to_file("res://scenes/openworld/alotushuonetesti_1.tscn")
+		SceneManager.load_new_scene("res://scenes/openworld/alotushuonetesti_1.tscn","fade_to_black")
 	
 func _on_enemy_turn_ended() -> void:
 	player_handler.start_turn()
