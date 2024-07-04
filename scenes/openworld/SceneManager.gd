@@ -63,7 +63,7 @@ func monitor_load_status() -> void:
 			_load_progress_timer.stop()
 			_load_progress_timer.queue_free()
 			content_finished_loading.emit(ResourceLoader.load_threaded_get(_content_path).instantiate())
-			return # this last return isn't necessary but I like how the 3 dead ends stand out as similar
+
 	
 func on_content_failed_to_load(path:String) -> void:
 	printerr("error: Failed to load resource: '%s'" % [path])
@@ -82,22 +82,19 @@ func on_content_finished_loading(content) -> void:
 	if content is Level:
 		content.data = incoming_data
 
-	# Remove the old scene
+
 	outgoing_scene.queue_free()
 	
-	# Add and set the new scene to current
+
 	get_tree().root.call_deferred("add_child",content)
 	get_tree().set_deferred("current_scene",content)
 	
-	# probably not necssary since we split our content_finished_loading but it won't hurt to have an extra check
+
 	if loading_screen != null:
 		loading_screen.finish_transition()
-		# e.g. will be skipped if we're loading a menu instead of a game level
 		if content is Level:
 			content.init_player_location()
-		# wait for LoadingScreen's transition to finish playing
 		await loading_screen.anim_player.animation_finished
 		loading_screen = null
-		# samesies^
 		if content is Level:
 			content.enter_level()	

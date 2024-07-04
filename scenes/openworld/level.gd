@@ -4,6 +4,9 @@ class_name Level extends Node2D
 @export var doors:Array[Door]
 var data:LevelDataHandoff
 
+#teleport values... goofy code ahead
+
+
 func _ready() -> void:
 	player.disable()
 	#player.visible = false
@@ -20,6 +23,9 @@ func init_player_location() -> void:
 		for door in doors:
 			$Player.position.x = door.teleport_posx
 			$Player.position.y = door.teleport_posy
+			print("teleport!")
+			#print(door.teleport_posx)
+			#print(door.teleport_posy)
 	#if data != null:
 	#	for door in doors:
 	#		if door.name == data.entry_door_name:
@@ -42,3 +48,4 @@ func _disconnect_from_doors() -> void:
 	for door in doors:
 		if door.player_entered_door.is_connected(_on_player_entered_door):
 			door.player_entered_door.disconnect(_on_player_entered_door)
+

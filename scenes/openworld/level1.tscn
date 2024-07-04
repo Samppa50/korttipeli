@@ -115,7 +115,6 @@ entry_dir = 2
 transition_type = "fade_to_black"
 path_to_new_scene = "res://scenes/openworld/alotushuonetesti_1.tscn"
 entry_door_name = "SouthDoor"
-teleport_posx = 100
 teleport_posy = 600
 
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]

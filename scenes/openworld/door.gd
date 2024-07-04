@@ -16,6 +16,8 @@ func _on_body_entered(body: Node2D) -> void:
 		return
 	player_entered_door.emit(self)
 	SceneManager.load_new_scene(path_to_new_scene,transition_type)
+	#print(teleport_posx)
+	#print(teleport_posy)
 	queue_free()
 	
 func get_player_entry_pos() -> Vector2:
