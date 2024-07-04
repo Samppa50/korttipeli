@@ -247,10 +247,11 @@ radius = 52.0
 [sub_resource type="CircleShape2D" id="CircleShape2D_6g71q"]
 radius = 33.0
 
-[node name="alotushuonetesti1" type="Node2D" node_paths=PackedStringArray("player")]
+[node name="alotushuonetesti1" type="Node2D" node_paths=PackedStringArray("player", "doors")]
 y_sort_enabled = true
 script = ExtResource("1_p287q")
 player = NodePath("Player")
+doors = [NodePath("NorthDoor")]
 
 [node name="TileMap" type="TileMap" parent="."]
 y_sort_enabled = true
@@ -268,15 +269,6 @@ layer_2/tile_data = PackedInt32Array(131073, 65538, 0, 131074, 65538, 0, 131075,
 position = Vector2(906, 299)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
-
-[node name="NorthDoor" parent="." instance=ExtResource("13_c3c5a")]
-position = Vector2(893, 9)
-entry_dir = 0
-transition_type = "fade_to_black"
-path_to_new_scene = "res://scenes/openworld/level1.tscn"
-entry_door_name = "NorthDoor"
-teleport_posx = 700
-teleport_posy = 700
 
 [node name="Market1" type="Area2D" parent="."]
 position = Vector2(1344, 287)
@@ -303,6 +295,15 @@ position = Vector2(445, 64)
 scale = Vector2(0.8, 0.8)
 texture = ExtResource("17_xi0jj")
 flip_h = true
+
+[node name="NorthDoor" parent="." instance=ExtResource("13_c3c5a")]
+position = Vector2(898, 9)
+entry_dir = 2
+transition_type = "fade_to_black"
+path_to_new_scene = "res://scenes/openworld/level1.tscn"
+entry_door_name = "SouthDoor"
+teleport_posx = 600
+teleport_posy = 500
 
 [connection signal="body_entered" from="Market1" to="Market1" method="_on_body_entered"]
 [connection signal="body_exited" from="Market1" to="Market1" method="_on_body_exited"]

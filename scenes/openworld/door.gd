@@ -31,3 +31,13 @@ func get_player_entry_pos() -> Vector2:
 			vector = Vector2.DOWN
 	return (vector * push_distance) + self.position
 	
+func get_move_dir() -> Vector2:
+	var dir:Vector2 = Vector2.RIGHT
+	match entry_dir:
+		0:
+			dir = Vector2.DOWN
+		1:
+			dir = Vector2.LEFT
+		2:
+			dir = Vector2.UP
+	return dir
