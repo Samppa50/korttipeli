@@ -11,13 +11,20 @@ config_version=5
 [application]
 
 config/name="cardgame"
-run/main_scene="res://scenes/openworld/level1.tscn"
+run/main_scene="res://scenes/startscreen/start_screen.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
+config/icon="res://art/TESTplayer.png"
 
 [autoload]
 
 Events="*res://global/events.gd"
 SceneManager="*res://scenes/openworld/SceneManager.gd"
+
+[display]
+
+window/size/viewport_width=1280
+window/size/viewport_height=720
+window/stretch/mode="viewport"
 
 [input]
 
@@ -70,4 +77,3 @@ sprint={
 [rendering]
 
 textures/canvas_textures/default_texture_filter=0
-anti_aliasing/quality/msaa_2d=3

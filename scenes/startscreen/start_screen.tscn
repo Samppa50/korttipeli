@@ -1,0 +1,18 @@
+[gd_scene load_steps=2 format=3 uid="uid://dbh08idldnk7u"]
+
+[ext_resource type="Script" path="res://scenes/startscreen/StartScreen.gd" id="1_61bt6"]
+
+[node name="StartScreen" type="Node2D"]
+script = ExtResource("1_61bt6")
+
+[node name="StartButton" type="Button" parent="."]
+custom_minimum_size = Vector2(300, 150)
+offset_left = 497.0
+offset_top = 283.0
+offset_right = 797.0
+offset_bottom = 433.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "Start"
+
+[connection signal="button_up" from="StartButton" to="." method="_on_button_button_up"]
