@@ -57,7 +57,7 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_c50lx"]
-radius = 13.0384
+radius = 19.4165
 
 [node name="Player" type="CharacterBody2D"]
 y_sort_enabled = true
@@ -70,5 +70,5 @@ animation = &"walk"
 offset = Vector2(0, -30)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -12)
+position = Vector2(0, -18)
 shape = SubResource("CircleShape2D_c50lx")

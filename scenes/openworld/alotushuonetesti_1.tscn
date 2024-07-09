@@ -269,6 +269,8 @@ layer_2/tile_data = PackedInt32Array(131073, 65538, 0, 131074, 65538, 0, 131075,
 position = Vector2(906, 299)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
+position_smoothing_enabled = true
+position_smoothing_speed = 10.0
 
 [node name="Market1" type="Area2D" parent="."]
 position = Vector2(1344, 287)

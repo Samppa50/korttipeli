@@ -16,7 +16,7 @@
 [ext_resource type="Theme" uid="uid://on4kexy3pw0s" path="res://themes/main_theme.tres" id="12_g0b6n"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hl3xg"]
-size = Vector2(1152, 437)
+size = Vector2(1279, 530.5)
 
 [node name="Battle" type="Node2D"]
 script = ExtResource("1_entn3")
@@ -24,15 +24,15 @@ char_stats = ExtResource("2_56ky3")
 
 [node name="background" type="Sprite2D" parent="."]
 modulate = Color(0.737255, 0.737255, 0.737255, 1)
-position = Vector2(575.75, 323.5)
-scale = Vector2(0.598177, 0.599074)
+position = Vector2(640.75, 360)
+scale = Vector2(0.665885, 0.666667)
 texture = ExtResource("3_j2cuw")
 
 [node name="carddroparea" type="Area2D" parent="."]
 collision_layer = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="carddroparea"]
-position = Vector2(577, 220)
+position = Vector2(640.5, 266.75)
 shape = SubResource("RectangleShape2D_hl3xg")
 debug_color = Color(0, 0.513726, 0.6, 0.133333)
 
@@ -40,7 +40,7 @@ debug_color = Color(0, 0.513726, 0.6, 0.133333)
 script = ExtResource("4_08nm5")
 
 [node name="EnemyBasic" parent="EnemyHandler" instance=ExtResource("5_egwwo")]
-position = Vector2(977, 312)
+position = Vector2(1141, 316)
 stats = ExtResource("6_hmwbm")
 
 [node name="PlayerFight" parent="." instance=ExtResource("4_wj75e")]

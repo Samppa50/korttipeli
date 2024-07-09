@@ -96,6 +96,8 @@ layer_0/tile_data = PackedInt32Array(0, 196610, 0, 65536, 131074, 0, 131072, 131
 position = Vector2(129, 105)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
+position_smoothing_enabled = true
+position_smoothing_speed = 10.0
 
 [node name="Area2D" type="Area2D" parent="."]
 script = ExtResource("4_fcb4b")
