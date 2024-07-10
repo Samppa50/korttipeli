@@ -33,12 +33,11 @@ func _process(delta):
 
 
 func disable():
-	input_enabled = false
+	speed = 0
 	current_animation = "idle"
 	
 func enable():
-	input_enabled = true
-	visible = true
+	speed = 200
 
 
 
