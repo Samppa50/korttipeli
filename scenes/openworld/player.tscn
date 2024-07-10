@@ -64,7 +64,6 @@ y_sort_enabled = true
 script = ExtResource("1_cj6my")
 
 [node name="Playeranim" type="AnimatedSprite2D" parent="."]
-
 sprite_frames = SubResource("SpriteFrames_gwvdq")
 animation = &"walk"
 offset = Vector2(0, -30)
