@@ -1,6 +1,4 @@
-
-[gd_scene load_steps=31 format=3 uid="uid://buyeyvy33h0bd"]
-
+[gd_scene load_steps=35 format=3 uid="uid://buyeyvy33h0bd"]
 
 [ext_resource type="Texture2D" uid="uid://ijccoth3a5oq" path="res://art/concrete-Sheet.png" id="1_kl3tv"]
 [ext_resource type="Texture2D" uid="uid://pkl14mroeivj" path="res://art/objects.png" id="1_njyhq"]
@@ -283,20 +281,16 @@ sources/6 = SubResource("TileSetAtlasSource_j5mqm")
 sources/9 = SubResource("TileSetAtlasSource_vg8dx")
 sources/10 = SubResource("TileSetAtlasSource_50f7t")
 sources/12 = SubResource("TileSetAtlasSource_875l6")
-
 sources/1 = SubResource("TileSetAtlasSource_bucwq")
 sources/8 = SubResource("TileSetAtlasSource_5flal")
 
-
 [sub_resource type="CircleShape2D" id="CircleShape2D_ld2yi"]
 radius = 52.0
-
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_6g71q"]
 radius = 33.0
 
 [node name="alotushuonetesti1" type="Node2D" node_paths=PackedStringArray("player", "doors")]
-
 y_sort_enabled = true
 script = ExtResource("1_p287q")
 player = NodePath("Player")
@@ -318,10 +312,8 @@ layer_2/tile_data = PackedInt32Array(131073, 65538, 0, 131074, 65538, 0, 131075,
 position = Vector2(906, 299)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
-
 position_smoothing_enabled = true
 position_smoothing_speed = 10.0
-
 
 [node name="Market1" type="Area2D" parent="."]
 position = Vector2(1344, 287)
@@ -363,7 +355,5 @@ teleport_posy = 500
 [connection signal="body_exited" from="Market1" to="Market1" method="_on_body_exited"]
 [connection signal="movementlock" from="Market1" to="Player" method="_on_market_1_movementlock"]
 [connection signal="movementresume" from="Market1/Shop" to="Player" method="_on_shop_movementresume"]
-
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
 [connection signal="body_exited" from="Area2D" to="Area2D" method="_on_body_exited"]
-

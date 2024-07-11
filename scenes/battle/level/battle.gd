@@ -42,5 +42,6 @@ func _on_enemy_turn_ended() -> void:
 
 func _on_player_died() -> void:
 	print("you lost!")
-	#tähän tulee häviö homma 
+	#tähän tulee häviö homma
+	
 
