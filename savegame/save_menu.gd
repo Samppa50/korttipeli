@@ -13,6 +13,7 @@ func verify_save_directory(path : String):
 	DirAccess.make_dir_absolute(path)
 
 func save_data(path: String):
+	save_teleport_player()
 	var file = FileAccess.open_encrypted_with_pass(path, FileAccess.WRITE, SECURITY_KEY)
 	if file == null:
 		print(FileAccess.get_open_error())
@@ -20,10 +21,8 @@ func save_data(path: String):
 	var data = { 
 		"player_data": {
 			"health": player_data.health,
-			"global_position": {
-				"x": player_data.global_position.x,
-				"y": player_data.global_position.y
-			},
+			"global_positionx": player_data.global_positionx,
+			"global_positiony": player_data.global_positiony,
 			"world": player_data.world
 		}
 	}
@@ -49,9 +48,11 @@ func load_data(path: String):
 		
 		player_data = PlayerData.new()
 		player_data.health = data.player_data.health
-		player_data.global_position = Vector2(data.player_data.global_position.x, data.player_data.global_position.y)
+		player_data.global_positionx = data.player_data.global_positionx
+		player_data.global_positiony = data.player_data.global_positiony
 		player_data.world = data.player_data.world
-		
+		teleport_player()
+	
 	else:	 
 		printerr("cannot open non-existent file")
 
@@ -61,3 +62,18 @@ func _on_save_button_pressed():
 
 func _on_load_button_pressed():
 	load_data(SAVE_DIR + SAVE_FILE_NAME)
+	
+func teleport_player():
+	if player_data.global_positionx != 0 && player_data.global_positiony != 0:
+		$Player.position.x = player_data.global_positionx
+		$Player.position.y = player_data.global_positiony
+		print("teleporting to")
+		print(player_data.global_positionx)
+		print(player_data.global_positiony)
+	else:
+		print("no location to teleport to")
+
+func save_teleport_player():
+	var player = get_node("./Player")
+	player_data.global_positionx = player.position.x
+	player_data.global_positiony = player.position.y

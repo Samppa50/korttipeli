@@ -19,6 +19,8 @@ config/icon="res://art/TESTplayer.png"
 
 Events="*res://global/events.gd"
 SceneManager="*res://scenes/openworld/SceneManager.gd"
+SaveMenu="*res://savegame/save_menu.gd"
+Data="*res://savegame/resources/PlayerData.gd"
 
 [display]
 

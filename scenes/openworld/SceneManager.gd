@@ -27,7 +27,6 @@ func load_new_scene(content_path:String, transition_type:String="fade_to_black")
 
 func _load_content(content_path:String) -> void:
 	
-	# zelda transition doesn't use a loading screen - personal preference
 	if loading_screen != null:
 		await loading_screen.transition_is_complete
 		
