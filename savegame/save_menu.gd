@@ -5,6 +5,7 @@ const SAVE_FILE_NAME = "save.json"
 const SECURITY_KEY = "5922ISDK"
 
 var player_data = PlayerData.new()
+var current_world : String = "notfound"
 
 func _ready():
 	verify_save_directory(SAVE_DIR)
@@ -64,6 +65,14 @@ func _on_load_button_pressed():
 	load_data(SAVE_DIR + SAVE_FILE_NAME)
 	
 func teleport_player():
+	print(get_parent().name)
+	#pitänee tehdä levelien nimistä sellasia että niissä ei ole _ niin voidaan getparent namella vaihtaa joskus skeneä
+	if current_world != player_data.world:
+		#scenemanager toimii mutta teleporttiin tarvitaan await functio
+		#SceneManager.load_new_scene("res://scenes/openworld/level1.tscn","fade_to_black")
+		pass
+	else:
+		print("already in right world")
 	if player_data.global_positionx != 0 && player_data.global_positiony != 0:
 		$Player.position.x = player_data.global_positionx
 		$Player.position.y = player_data.global_positiony
