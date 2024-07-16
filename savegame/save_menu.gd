@@ -65,7 +65,7 @@ func _on_load_button_pressed():
 	load_data(SAVE_DIR + SAVE_FILE_NAME)
 	
 func teleport_player():
-	print(get_parent().name)
+	#print(get_parent().name)
 	#pitänee tehdä levelien nimistä sellasia että niissä ei ole _ niin voidaan getparent namella vaihtaa joskus skeneä
 	if current_world != player_data.world:
 		#scenemanager toimii mutta teleporttiin tarvitaan await functio

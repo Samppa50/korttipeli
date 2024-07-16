@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=3 uid="uid://buyeyvy33h0bd"]
+[gd_scene load_steps=34 format=3 uid="uid://buyeyvy33h0bd"]
 
 [ext_resource type="Texture2D" uid="uid://ijccoth3a5oq" path="res://art/concrete-Sheet.png" id="1_kl3tv"]
 [ext_resource type="Texture2D" uid="uid://pkl14mroeivj" path="res://art/objects.png" id="1_njyhq"]
@@ -17,9 +17,8 @@
 [ext_resource type="PackedScene" uid="uid://b35asug5y2j6i" path="res://scenes/openworld/door.tscn" id="13_c3c5a"]
 [ext_resource type="PackedScene" uid="uid://b737o1imroenu" path="res://savegame/menu.tscn" id="15_bcij1"]
 [ext_resource type="Script" path="res://scenes/openworld/Market1.gd" id="15_hn3wt"]
+[ext_resource type="PackedScene" uid="uid://pqm7owuksnsq" path="res://scenes/openworld/basic_enemy.tscn" id="16_2rl4y"]
 [ext_resource type="PackedScene" uid="uid://cgroda706y8f5" path="res://scenes/Shop/shop.tscn" id="16_db2km"]
-[ext_resource type="Script" path="res://scenes/openworld/scripts/Fight1.gd" id="16_ylat2"]
-[ext_resource type="Texture2D" uid="uid://cu465ur2cyu6h" path="res://art/grindzombie.png" id="17_xi0jj"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_brmwy"]
 texture = ExtResource("1_kl3tv")
@@ -288,9 +287,6 @@ sources/8 = SubResource("TileSetAtlasSource_5flal")
 [sub_resource type="CircleShape2D" id="CircleShape2D_ld2yi"]
 radius = 52.0
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_6g71q"]
-radius = 33.0
-
 [node name="alotushuonetesti1" type="Node2D" node_paths=PackedStringArray("player", "doors")]
 y_sort_enabled = true
 script = ExtResource("1_p287q")
@@ -322,19 +318,7 @@ visible = false
 top_level = true
 position = Vector2(777, -18)
 
-[node name="Area2D" type="Area2D" parent="."]
-position = Vector2(-271, 310)
-script = ExtResource("16_ylat2")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(445, 64)
-shape = SubResource("CircleShape2D_6g71q")
-
-[node name="Sprite2D" type="Sprite2D" parent="Area2D"]
-position = Vector2(445, 64)
-scale = Vector2(0.8, 0.8)
-texture = ExtResource("17_xi0jj")
-flip_h = true
+[node name="BasicEnemy" parent="." instance=ExtResource("16_2rl4y")]
 
 [node name="NorthDoor" parent="." instance=ExtResource("13_c3c5a")]
 position = Vector2(898, 9)
@@ -358,5 +342,3 @@ position_smoothing_speed = 10.0
 [connection signal="body_exited" from="Market1" to="Market1" method="_on_body_exited"]
 [connection signal="movementlock" from="Market1" to="Menu/Player" method="_on_market_1_movementlock"]
 [connection signal="movementresume" from="Market1/Shop" to="Menu/Player" method="_on_shop_movementresume"]
-[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
-[connection signal="body_exited" from="Area2D" to="Area2D" method="_on_body_exited"]
