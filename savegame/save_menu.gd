@@ -5,7 +5,9 @@ const SAVE_FILE_NAME = "save.json"
 const SECURITY_KEY = "5922ISDK"
 
 var player_data = PlayerData.new()
-var current_world : String = "notfound"
+var current_world : String = "404 not found"
+
+
 
 func _ready():
 	verify_save_directory(SAVE_DIR)
@@ -48,6 +50,7 @@ func load_data(path: String):
 			return
 		
 		player_data = PlayerData.new()
+		#position not needed atm
 		player_data.health = data.player_data.health
 		player_data.global_positionx = data.player_data.global_positionx
 		player_data.global_positiony = data.player_data.global_positiony
@@ -65,24 +68,26 @@ func _on_load_button_pressed():
 	load_data(SAVE_DIR + SAVE_FILE_NAME)
 	
 func teleport_player():
-	#print(get_parent().name)
+	#print("res://scenes/openworld/"+str(get_parent().name)+".tscn")
 	#pitänee tehdä levelien nimistä sellasia että niissä ei ole _ niin voidaan getparent namella vaihtaa joskus skeneä
-	if current_world != player_data.world:
-		#scenemanager toimii mutta teleporttiin tarvitaan await functio
-		#SceneManager.load_new_scene("res://scenes/openworld/level1.tscn","fade_to_black")
-		pass
-	else:
-		print("already in right world")
-	if player_data.global_positionx != 0 && player_data.global_positiony != 0:
-		$Player.position.x = player_data.global_positionx
-		$Player.position.y = player_data.global_positiony
-		print("teleporting to")
-		print(player_data.global_positionx)
-		print(player_data.global_positiony)
-	else:
-		print("no location to teleport to")
+
+	SceneManager.load_new_scene(player_data.world,"fade_to_black")
+	#await get_tree().create_timer(2).timeout
+	#SceneManager.load_new_scene("res://scenes/openworld/"+str(get_parent().name)+".tscn","fade_to_black")
+	#if player_data.global_positionx != 0 && player_data.global_positiony != 0:
+	#	await get_tree().create_timer(2).timeout
+	#	$Player.position.x = player_data.global_positionx
+	#	$Player.position.y = player_data.global_positiony
+	#	print("teleporting to")
+	#	print(player_data.global_positionx)
+	#	print(player_data.global_positiony)
+	#else:
+	#	print("no location to teleport to")
 
 func save_teleport_player():
 	var player = get_node("./Player")
 	player_data.global_positionx = player.position.x
 	player_data.global_positiony = player.position.y
+	
+	player_data.world = "res://scenes/openworld/"+str(get_parent().name)+".tscn"
+	print("res://scenes/openworld/"+str(get_parent().name)+".tscn")
