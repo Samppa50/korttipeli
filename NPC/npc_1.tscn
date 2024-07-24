@@ -1,0 +1,40 @@
+[gd_scene load_steps=6 format=3 uid="uid://c6ekrsdjigho8"]
+
+[ext_resource type="Texture2D" uid="uid://3pn2isch88lq" path="res://art/NPC_1.png" id="1_b48rf"]
+[ext_resource type="Script" path="res://NPC/npc_1.gd" id="1_pstj3"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_68nij"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_b48rf")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_fswi5"]
+radius = 93.0215
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ibc3u"]
+size = Vector2(37, 37)
+
+[node name="NPC_1" type="CharacterBody2D"]
+script = ExtResource("1_pstj3")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.7, 0.7)
+sprite_frames = SubResource("SpriteFrames_68nij")
+
+[node name="dialog_trigger" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="dialog_trigger"]
+shape = SubResource("CircleShape2D_fswi5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, 25.5)
+shape = SubResource("RectangleShape2D_ibc3u")
+
+[connection signal="body_entered" from="dialog_trigger" to="." method="_on_dialog_trigger_body_entered"]
+[connection signal="body_exited" from="dialog_trigger" to="." method="_on_dialog_trigger_body_exited"]

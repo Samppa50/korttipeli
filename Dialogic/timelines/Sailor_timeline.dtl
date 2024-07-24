@@ -1,0 +1,9 @@
+join Sailor center
+Sailor: Hello!
+Sailor: I run a fishing business in the harbour city just north of here.
+Sailor: My fishing crew could use some help from an adventurer like you.
+Sailor: Could you help us?
+- Yes!
+	Sailor: Thank you so much!
+- Not right now, sorry.
+	Sailor: No problem!
