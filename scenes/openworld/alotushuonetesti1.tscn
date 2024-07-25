@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=3 uid="uid://buyeyvy33h0bd"]
+[gd_scene load_steps=38 format=3 uid="uid://buyeyvy33h0bd"]
 
 [ext_resource type="Script" path="res://scenes/openworld/level.gd" id="1_xvdw2"]
 [ext_resource type="Texture2D" uid="uid://ijccoth3a5oq" path="res://art/concrete-Sheet.png" id="2_kesdb"]
@@ -21,6 +21,7 @@
 [ext_resource type="PackedScene" uid="uid://b737o1imroenu" path="res://savegame/menu.tscn" id="19_aa0vv"]
 [ext_resource type="PackedScene" uid="uid://sidvgbqie7pd" path="res://scenes/openworld/player.tscn" id="20_8ygk4"]
 [ext_resource type="PackedScene" uid="uid://c6ekrsdjigho8" path="res://NPC/npc_1.tscn" id="21_625sn"]
+[ext_resource type="PackedScene" uid="uid://cqmo22t88tgm1" path="res://scenes/openworld/taverna.tscn" id="22_ak0l0"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_brmwy"]
 texture = ExtResource("2_kesdb")
@@ -349,7 +350,7 @@ teleport_posy = 500
 [node name="Menu" parent="." instance=ExtResource("19_aa0vv")]
 
 [node name="Player" parent="Menu" instance=ExtResource("20_8ygk4")]
-position = Vector2(906, 299)
+position = Vector2(672, 1822)
 
 [node name="Camera2D" type="Camera2D" parent="Menu/Player"]
 position_smoothing_enabled = true
@@ -357,6 +358,9 @@ position_smoothing_speed = 10.0
 
 [node name="NPC_1" parent="." instance=ExtResource("21_625sn")]
 position = Vector2(998, 200)
+
+[node name="taverna" parent="." instance=ExtResource("22_ak0l0")]
+position = Vector2(506, 1631)
 
 [connection signal="body_entered" from="Market1" to="Market1" method="_on_body_entered"]
 [connection signal="body_exited" from="Market1" to="Market1" method="_on_body_exited"]
