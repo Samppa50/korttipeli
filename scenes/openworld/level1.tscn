@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://blis02ss8ccpq"]
+[gd_scene load_steps=15 format=3 uid="uid://blis02ss8ccpq"]
 
 [ext_resource type="Texture2D" uid="uid://du84hlpkpwenu" path="res://art/Sprite-grass.png" id="1_223ld"]
 [ext_resource type="Script" path="res://scenes/openworld/level.gd" id="1_mjr2w"]
@@ -8,6 +8,7 @@
 [ext_resource type="Script" path="res://scenes/openworld/scripts/Fight1.gd" id="4_fcb4b"]
 [ext_resource type="Texture2D" uid="uid://cu465ur2cyu6h" path="res://art/grindzombie.png" id="5_kt78e"]
 [ext_resource type="PackedScene" uid="uid://b35asug5y2j6i" path="res://scenes/openworld/door.tscn" id="6_mtl87"]
+[ext_resource type="PackedScene" uid="uid://b737o1imroenu" path="res://savegame/menu.tscn" id="8_2fhah"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_04qan"]
 texture = ExtResource("2_jmqdx")
@@ -111,7 +112,7 @@ radius = 33.0
 
 [node name="level1" type="Node2D" node_paths=PackedStringArray("player", "doors")]
 script = ExtResource("1_mjr2w")
-player = NodePath("Player")
+player = NodePath("Menu/Player")
 doors = [NodePath("SouthDoor")]
 
 [node name="TileMap" type="TileMap" parent="."]
@@ -140,10 +141,12 @@ entry_door_name = "NorthDoor"
 teleport_posx = 430
 teleport_posy = 500
 
-[node name="Player" parent="." instance=ExtResource("3_7itvc")]
+[node name="Menu" parent="." instance=ExtResource("8_2fhah")]
+
+[node name="Player" parent="Menu" instance=ExtResource("3_7itvc")]
 position = Vector2(129, 105)
 
-[node name="Camera2D" type="Camera2D" parent="Player"]
+[node name="Camera2D" type="Camera2D" parent="Menu/Player"]
 position_smoothing_enabled = true
 position_smoothing_speed = 10.0
 
