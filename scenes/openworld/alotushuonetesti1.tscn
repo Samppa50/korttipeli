@@ -1,4 +1,3 @@
-
 [gd_scene load_steps=37 format=3 uid="uid://buyeyvy33h0bd"]
 
 [ext_resource type="Script" path="res://scenes/openworld/level.gd" id="1_xvdw2"]
@@ -25,7 +24,6 @@
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_brmwy"]
 texture = ExtResource("2_kesdb")
-
 texture_region_size = Vector2i(64, 64)
 0:0/0 = 0
 0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
@@ -40,8 +38,8 @@ texture_region_size = Vector2i(64, 64)
 3:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 3:0/0/physics_layer_0/angular_velocity = 0.0
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_bucwq"]
 texture = ExtResource("3_4kcbh")
-
 texture_region_size = Vector2i(64, 64)
 0:0/0 = 0
 0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
@@ -65,8 +63,8 @@ texture_region_size = Vector2i(64, 64)
 6:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 6:0/0/physics_layer_0/angular_velocity = 0.0
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_50f7t"]
 texture = ExtResource("4_iluh3")
-
 texture_region_size = Vector2i(64, 64)
 0:0/0 = 0
 0:0/0/y_sort_origin = -10
@@ -80,9 +78,7 @@ texture_region_size = Vector2i(64, 64)
 1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -12.0208, 29.75, -12, 30, 15.75, 17.75, 15.75, 16.9706, 23.6881, 21.5, 25.5, 20.75, 32, 6.36396, 32, 5.3033, 24.0416, -32, 23.6881)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_875l6"]
-
 texture = ExtResource("5_6g8c3")
-
 texture_region_size = Vector2i(64, 64)
 0:0/0 = 0
 0:0/0/y_sort_origin = 100
@@ -104,9 +100,7 @@ texture_region_size = Vector2i(64, 64)
 1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -16.2635, 16.617, -16.617, 16.617, 13.0815, 16.2635, 28.2843, 7.77818, 28.6378, 7.07107, 16.617, -27.2236, 17.3241, -26.8701, 28.6378, -32, 28.6378, -32, -8.83883)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hrlvy"]
-
 texture = ExtResource("6_lxuca")
-
 texture_region_size = Vector2i(64, 64)
 0:0/0 = 0
 0:0/0/y_sort_origin = 15
@@ -146,9 +140,7 @@ texture_region_size = Vector2i(64, 64)
 5:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-177, -25, 159, -23, 159, 112, -176, 112)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rxy6g"]
-
 texture = ExtResource("7_o5lpw")
-
 texture_region_size = Vector2i(64, 64)
 0:0/0 = 0
 0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
@@ -179,9 +171,7 @@ texture_region_size = Vector2i(64, 64)
 8:0/0/physics_layer_0/angular_velocity = 0.0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qt8dy"]
-
 texture = ExtResource("8_muu3p")
-
 texture_region_size = Vector2i(64, 64)
 0:0/0 = 0
 0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
@@ -194,9 +184,7 @@ texture_region_size = Vector2i(64, 64)
 2:0/0/physics_layer_0/angular_velocity = 0.0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_h8mhw"]
-
 texture = ExtResource("9_5j4vy")
-
 texture_region_size = Vector2i(64, 64)
 0:0/0 = 0
 0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
@@ -221,9 +209,7 @@ texture_region_size = Vector2i(64, 64)
 6:0/0/physics_layer_0/angular_velocity = 0.0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_j5mqm"]
-
 texture = ExtResource("10_sj53b")
-
 texture_region_size = Vector2i(64, 64)
 0:0/size_in_atlas = Vector2i(4, 7)
 0:0/0 = 0
@@ -233,9 +219,7 @@ texture_region_size = Vector2i(64, 64)
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-104.652, -72.1249, 108.894, -72.1249, 104.652, 205.768, -106.773, 205.061)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_imbfr"]
-
 texture = ExtResource("11_ggdo2")
-
 texture_region_size = Vector2i(64, 64)
 0:0/0 = 0
 0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
@@ -266,9 +250,7 @@ texture_region_size = Vector2i(64, 64)
 8:0/0/physics_layer_0/angular_velocity = 0.0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5flal"]
-
 texture = ExtResource("12_a6gd6")
-
 texture_region_size = Vector2i(64, 64)
 0:0/0 = 0
 0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
@@ -281,9 +263,7 @@ texture_region_size = Vector2i(64, 64)
 2:0/0/physics_layer_0/angular_velocity = 0.0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vg8dx"]
-
 texture = ExtResource("13_uwksc")
-
 texture_region_size = Vector2i(64, 64)
 0:0/0 = 0
 0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
@@ -309,14 +289,12 @@ sources/8 = SubResource("TileSetAtlasSource_5flal")
 [sub_resource type="CircleShape2D" id="CircleShape2D_ld2yi"]
 radius = 52.0
 
-
 [sub_resource type="CircleShape2D" id="CircleShape2D_6g71q"]
 radius = 33.0
 
 [node name="alotushuonetesti1" type="Node2D" node_paths=PackedStringArray("player", "doors")]
 y_sort_enabled = true
 script = ExtResource("1_xvdw2")
-
 player = NodePath("Menu/Player")
 doors = [NodePath("NorthDoor")]
 
@@ -334,21 +312,16 @@ layer_2/tile_data = PackedInt32Array(131073, 65538, 0, 131074, 65538, 0, 131075,
 
 [node name="Market1" type="Area2D" parent="."]
 position = Vector2(1344, 287)
-
 script = ExtResource("14_1oa55")
-
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Market1"]
 position = Vector2(-1, 1)
 shape = SubResource("CircleShape2D_ld2yi")
 
-
 [node name="Shop" parent="Market1" instance=ExtResource("15_4q532")]
-
 visible = false
 top_level = true
 position = Vector2(777, -18)
-
 
 [node name="Area2D" type="Area2D" parent="."]
 position = Vector2(-271, 310)
@@ -365,7 +338,6 @@ texture = ExtResource("17_ucu03")
 flip_h = true
 
 [node name="NorthDoor" parent="." instance=ExtResource("18_8appa")]
-
 position = Vector2(898, 9)
 entry_dir = 2
 transition_type = "fade_to_black"
@@ -374,11 +346,9 @@ entry_door_name = "SouthDoor"
 teleport_posx = 600
 teleport_posy = 500
 
-
 [node name="Menu" parent="." instance=ExtResource("19_aa0vv")]
 
 [node name="Player" parent="Menu" instance=ExtResource("20_8ygk4")]
-
 position = Vector2(906, 299)
 
 [node name="Camera2D" type="Camera2D" parent="Menu/Player"]
@@ -392,7 +362,5 @@ position = Vector2(998, 200)
 [connection signal="body_exited" from="Market1" to="Market1" method="_on_body_exited"]
 [connection signal="movementlock" from="Market1" to="Menu/Player" method="_on_market_1_movementlock"]
 [connection signal="movementresume" from="Market1/Shop" to="Menu/Player" method="_on_shop_movementresume"]
-
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
 [connection signal="body_exited" from="Area2D" to="Area2D" method="_on_body_exited"]
-
