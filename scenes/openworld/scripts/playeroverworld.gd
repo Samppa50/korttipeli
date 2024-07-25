@@ -48,3 +48,7 @@ func _on_market_1_movementlock():
 func _on_shop_movementresume():
 	speed = 200
 
+
+func player():
+	pass
+	
