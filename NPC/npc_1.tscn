@@ -24,16 +24,18 @@ size = Vector2(37, 37)
 script = ExtResource("1_pstj3")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -11)
 scale = Vector2(0.7, 0.7)
 sprite_frames = SubResource("SpriteFrames_68nij")
 
 [node name="dialog_trigger" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="dialog_trigger"]
+visible = false
 shape = SubResource("CircleShape2D_fswi5")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-0.5, 25.5)
+position = Vector2(0, 14)
 shape = SubResource("RectangleShape2D_ibc3u")
 
 [connection signal="body_entered" from="dialog_trigger" to="." method="_on_dialog_trigger_body_entered"]

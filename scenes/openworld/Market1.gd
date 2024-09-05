@@ -17,5 +17,3 @@ func _process(delta):
 		if Input.is_action_just_pressed("use"):
 			get_node("Shop").show()
 			emit_signal("movementlock")
-
-

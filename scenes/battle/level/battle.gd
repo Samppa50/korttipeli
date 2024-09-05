@@ -44,4 +44,3 @@ func _on_player_died() -> void:
 	print("you lost!")
 	#tähän tulee häviö homma
 	
-
