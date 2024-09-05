@@ -23,4 +23,3 @@ func _on_dialog_trigger_body_entered(body):
 func _on_dialog_trigger_body_exited(body):
 	if body.has_method("player"):
 		player_in_area = false
-

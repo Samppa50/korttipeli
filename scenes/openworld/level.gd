@@ -54,4 +54,3 @@ func _disconnect_from_doors() -> void:
 	for door in doors:
 		if door.player_entered_door.is_connected(_on_player_entered_door):
 			door.player_entered_door.disconnect(_on_player_entered_door)
-
