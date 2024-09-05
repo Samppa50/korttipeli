@@ -7,12 +7,20 @@ script = ExtResource("1_61bt6")
 
 [node name="StartButton" type="Button" parent="."]
 custom_minimum_size = Vector2(300, 150)
-offset_left = 497.0
-offset_top = 283.0
-offset_right = 797.0
-offset_bottom = 433.0
+offset_left = 310.0
+offset_top = 281.0
+offset_right = 610.0
+offset_bottom = 431.0
 size_flags_horizontal = 4
 size_flags_vertical = 4
 text = "Start"
 
+[node name="LoadButton" type="Button" parent="."]
+offset_left = 716.0
+offset_top = 282.0
+offset_right = 1015.0
+offset_bottom = 431.0
+text = "Load"
+
 [connection signal="button_up" from="StartButton" to="." method="_on_button_button_up"]
+[connection signal="pressed" from="LoadButton" to="." method="_on_load_button_pressed"]
