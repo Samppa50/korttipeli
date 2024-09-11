@@ -31,7 +31,7 @@ func start_battle(stats: CharacterStats) -> void:
 func _on_enemies_child_order_changed() -> void:
 	if enemy_handler.get_child_count() == 0:
 		print("you won!")
-		#tähän tulee ohjaus takaisin overworldiin!
+		#tähän tulee ohjaus takaisin overworldiin! sekä xp ja kulta ja muut härpäkkeet
 		await get_tree().create_timer(1).timeout
 		#get_tree().change_scene_to_file("res://scenes/openworld/alotushuonetesti_1.tscn")
 		SceneManager.load_new_scene("res://scenes/openworld/alotushuonetesti1.tscn","fade_to_black")
