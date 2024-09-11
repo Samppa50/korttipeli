@@ -1,10 +1,9 @@
 extends Node
 
 @export var characterlevel : int
+@export var xp = 0
+@export var xp_required = 100
 
-var xp = 0
-var xp_required = 100
-var xp_total = 0
 
 func level_up() -> void:
 	characterlevel = characterlevel + 1
