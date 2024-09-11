@@ -17,6 +17,7 @@ func verify_save_directory(path : String):
 
 func save_data(path: String):
 	save_teleport_player()
+	level_get()
 	var file = FileAccess.open_encrypted_with_pass(path, FileAccess.WRITE, SECURITY_KEY)
 	if file == null:
 		print(FileAccess.get_open_error())
@@ -28,7 +29,8 @@ func save_data(path: String):
 			"global_positiony": player_data.global_positiony,
 			"world": player_data.world,
 			"player_level": player_data.player_level,
-			"player_xp": player_data.player_xp
+			"player_xp": player_data.player_xp,
+			"player_needed_xp": player_data.player_needed_xp
 		}
 	}
 	
@@ -59,7 +61,9 @@ func load_data(path: String):
 		player_data.world = data.player_data.world
 		player_data.player_level = data.player_data.player_level
 		player_data.player_xp = data.player_data.player_xp
+		player_data.player_needed_xp = data.player_data.player_needed_xp
 		teleport_player()
+		level_set()
 	
 	else:	 
 		printerr("cannot open non-existent file")
@@ -95,3 +99,15 @@ func save_teleport_player():
 	
 	player_data.world = "res://scenes/openworld/"+str(get_parent().name)+".tscn"
 	print("res://scenes/openworld/"+str(get_parent().name)+".tscn")
+
+func level_set():
+	experience.characterlevel = player_data.player_level
+	experience.xp = player_data.player_xp
+	experience.xp_required = player_data.player_needed_xp
+	print(experience.characterlevel)
+	print(experience.xp)
+
+func level_get():
+	player_data.player_level = experience.characterlevel
+	player_data.player_xp = experience.xp
+	player_data.player_needed_xp = experience.xp_required
