@@ -34,8 +34,9 @@ func _on_enemies_child_order_changed() -> void:
 		#tähän tulee ohjaus takaisin overworldiin! sekä xp ja kulta ja muut härpäkkeet
 		await get_tree().create_timer(1).timeout
 		#get_tree().change_scene_to_file("res://scenes/openworld/alotushuonetesti_1.tscn")
+		experience.experience_calc()
 		SceneManager.load_new_scene("res://scenes/openworld/alotushuonetesti1.tscn","fade_to_black")
-	
+		
 func _on_enemy_turn_ended() -> void:
 	player_handler.start_turn()
 	enemy_handler.reset_enemy_actions()
