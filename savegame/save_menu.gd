@@ -26,7 +26,9 @@ func save_data(path: String):
 			"health": player_data.health,
 			"global_positionx": player_data.global_positionx,
 			"global_positiony": player_data.global_positiony,
-			"world": player_data.world
+			"world": player_data.world,
+			"player_level": player_data.player_level,
+			"player_xp": player_data.player_xp
 		}
 	}
 	
@@ -55,6 +57,8 @@ func load_data(path: String):
 		player_data.global_positionx = data.player_data.global_positionx
 		player_data.global_positiony = data.player_data.global_positiony
 		player_data.world = data.player_data.world
+		player_data.player_level = data.player_data.player_level
+		player_data.player_xp = data.player_data.player_xp
 		teleport_player()
 	
 	else:	 

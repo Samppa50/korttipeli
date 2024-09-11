@@ -22,6 +22,7 @@ SceneManager="*res://scenes/openworld/SceneManager.gd"
 SaveMenu="*res://savegame/save_menu.gd"
 Data="*res://savegame/resources/PlayerData.gd"
 Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
+experience="*res://expirience.tscn"
 
 [dialogic]
 
