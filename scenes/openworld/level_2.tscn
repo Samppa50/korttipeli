@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://dcxiw43rgywj4"]
+[gd_scene load_steps=20 format=3 uid="uid://dcxiw43rgywj4"]
 
 [ext_resource type="Script" path="res://scenes/openworld/level.gd" id="1_fuxma"]
 [ext_resource type="Texture2D" uid="uid://brif2n5w6udfv" path="res://art/tie0.2-Sheet.png" id="1_nbcs1"]
@@ -9,6 +9,8 @@
 [ext_resource type="Texture2D" uid="uid://cmwnx1vbo567" path="res://art/merenmutka.png" id="5_gjhqr"]
 [ext_resource type="Texture2D" uid="uid://dir5usgkyvedu" path="res://art/silta1.png" id="6_gloqy"]
 [ext_resource type="PackedScene" uid="uid://b35asug5y2j6i" path="res://scenes/openworld/door.tscn" id="8_itxx2"]
+[ext_resource type="Script" path="res://scenes/openworld/laituri.gd" id="10_hw0w4"]
+[ext_resource type="PackedScene" uid="uid://g3oc61nd6m21" path="res://scenes/GUI/gui.tscn" id="11_njcyq"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_w4hfp"]
 texture = ExtResource("1_nbcs1")
@@ -72,6 +74,9 @@ sources/3 = SubResource("TileSetAtlasSource_fqsf7")
 sources/4 = SubResource("TileSetAtlasSource_vigvi")
 sources/5 = SubResource("TileSetAtlasSource_cw01f")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_csxi5"]
+size = Vector2(111, 84)
+
 [node name="level2" type="Node2D" node_paths=PackedStringArray("player", "doors")]
 script = ExtResource("1_fuxma")
 player = NodePath("Player")
@@ -86,7 +91,7 @@ layer_1/name = "houses"
 layer_1/tile_data = PackedInt32Array(1048595, 5, 0, 1179667, 5, 0, 1310739, 5, 0, 1441811, 5, 0, 1572883, 5, 0, 4980762, 2, 0, 5242906, 2, 0, 5505050, 2, 0, 5767194, 2, 0, 4980776, 2, 0, 5242920, 2, 0, 5505064, 2, 0, 5767208, 2, 0, 917548, 5, 0, 1048620, 5, 0, 1179692, 5, 0, 1310764, 5, 0, 1441836, 5, 0, 1572908, 5, 0, 4980785, 2, 268435456, 5242929, 2, 268435456, 5505073, 2, 268435456, 5767217, 2, 268435456, 4980799, 2, 0, 5242943, 2, 0, 5505087, 2, 0, 5767231, 2, 0, 917574, 5, 0, 1048646, 5, 0, 1179718, 5, 0, 1310790, 5, 0, 1441862, 5, 0, 1572934, 5, 0)
 
 [node name="Player" parent="." instance=ExtResource("4_3cujc")]
-position = Vector2(1271, 5175)
+position = Vector2(1239, 1715)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 position = Vector2(0, -1)
@@ -97,3 +102,15 @@ entry_dir = 0
 transition_type = "fade_to_black"
 path_to_new_scene = "res://scenes/openworld/level1.tscn"
 entry_door_name = "NorthDoor"
+
+[node name="laituri" type="Area2D" parent="."]
+position = Vector2(1248, 1023)
+script = ExtResource("10_hw0w4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="laituri"]
+shape = SubResource("RectangleShape2D_csxi5")
+
+[node name="GUI" parent="." instance=ExtResource("11_njcyq")]
+
+[connection signal="body_entered" from="laituri" to="laituri" method="_on_body_entered"]
+[connection signal="body_exited" from="laituri" to="laituri" method="_on_body_exited"]
