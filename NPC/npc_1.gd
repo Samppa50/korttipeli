@@ -23,3 +23,24 @@ func _on_dialog_trigger_body_entered(body):
 func _on_dialog_trigger_body_exited(body):
 	if body.has_method("player"):
 		player_in_area = false
+
+func _ready():
+	Dialogic.signal_event.connect(DialogicSignal)
+	pass
+	
+
+func DialogicSignal(argument:String):
+	if argument == "Quest123":
+		Questsystem.quest1Accepted = true
+		print("Signal123")
+		Quest_accepted()
+		if Questsystem.quest1done == true:
+			#experience.experience_calc()
+			print("+100xp")
+
+
+func Quest_accepted():
+	if Questsystem.quest1Accepted == true:
+		print("quest accepted") 
+		
+		

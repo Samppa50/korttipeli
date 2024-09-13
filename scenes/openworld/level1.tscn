@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://blis02ss8ccpq"]
+[gd_scene load_steps=26 format=3 uid="uid://blis02ss8ccpq"]
 
 [ext_resource type="Texture2D" uid="uid://du84hlpkpwenu" path="res://art/Sprite-grass.png" id="1_223ld"]
 [ext_resource type="Script" path="res://scenes/openworld/level.gd" id="1_mjr2w"]
@@ -14,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://b737o1imroenu" path="res://savegame/menu.tscn" id="8_2fhah"]
 [ext_resource type="Texture2D" uid="uid://dir5usgkyvedu" path="res://art/silta1.png" id="8_6vnsn"]
 [ext_resource type="Texture2D" uid="uid://u5hgs2u42jaf" path="res://art/puu1.png" id="8_b4amf"]
+[ext_resource type="PackedScene" uid="uid://g3oc61nd6m21" path="res://scenes/GUI/gui.tscn" id="15_ccj7a"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_04qan"]
 texture = ExtResource("2_jmqdx")
@@ -228,6 +229,8 @@ entry_dir = 2
 transition_type = "fade_to_black"
 path_to_new_scene = "res://scenes/openworld/level2.tscn"
 entry_door_name = "SouthDoor"
+
+[node name="GUI" parent="." instance=ExtResource("15_ccj7a")]
 
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
 [connection signal="body_exited" from="Area2D" to="Area2D" method="_on_body_exited"]
