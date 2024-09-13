@@ -35,8 +35,8 @@ func DialogicSignal(argument:String):
 		print("Signal123")
 		Quest_accepted()
 		if Questsystem.quest1done == true:
-			#experience.experience_calc()
-			print("+100xp")
+			experience.experience_calc()
+			
 
 
 func Quest_accepted():
