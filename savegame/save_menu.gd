@@ -18,6 +18,7 @@ func verify_save_directory(path : String):
 func save_data(path: String):
 	save_teleport_player()
 	level_get()
+	Quest_get()
 	var file = FileAccess.open_encrypted_with_pass(path, FileAccess.WRITE, SECURITY_KEY)
 	if file == null:
 		print(FileAccess.get_open_error())
@@ -30,7 +31,9 @@ func save_data(path: String):
 			"world": player_data.world,
 			"player_level": player_data.player_level,
 			"player_xp": player_data.player_xp,
-			"player_needed_xp": player_data.player_needed_xp
+			"player_needed_xp": player_data.player_needed_xp,
+			"Questaccepted": player_data.Questaccepted,
+			"Questdone": player_data.Questdone
 		}
 	}
 	
@@ -62,8 +65,11 @@ func load_data(path: String):
 		player_data.player_level = data.player_data.player_level
 		player_data.player_xp = data.player_data.player_xp
 		player_data.player_needed_xp = data.player_data.player_needed_xp
+		player_data.Questaccepted = data.player_data.Questaccepted
+		player_data.Questdone = data.player_data.Questdone
 		teleport_player()
 		level_set()
+		Quest_set()
 	
 	else:	 
 		printerr("cannot open non-existent file")
@@ -111,3 +117,12 @@ func level_get():
 	player_data.player_level = experience.characterlevel
 	player_data.player_xp = experience.xp
 	player_data.player_needed_xp = experience.xp_required
+
+func Quest_set():
+	Questsystem.quest1Accepted = player_data.Questaccepted
+	Questsystem.quest1done = player_data.Questdone
+	
+func Quest_get():
+	player_data.Questaccepted = Questsystem.quest1Accepted
+	player_data.Questdone = Questsystem.quest1done
+	
