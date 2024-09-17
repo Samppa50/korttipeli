@@ -7,3 +7,6 @@ class_name PlayerData extends Resource
 @export var world = "res://scenes/openworld/level1.tscn"
 @export var player_level = 0
 @export var player_xp = 0
+@export var player_needed_xp = 0
+@export var Questaccepted = false
+@export var Questdone = false
