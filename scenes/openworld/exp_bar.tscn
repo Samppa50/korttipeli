@@ -1,0 +1,28 @@
+[gd_scene load_steps=3 format=3 uid="uid://dq80drmqdsxq2"]
+
+[ext_resource type="Texture2D" uid="uid://hrt1v0writ8o" path="res://art/xpbar.png" id="1_hg51l"]
+[ext_resource type="Script" path="res://scenes/openworld/exp_bar.gd" id="1_vte48"]
+
+[node name="ExpBar" type="Node2D"]
+script = ExtResource("1_vte48")
+
+[node name="back" type="Sprite2D" parent="."]
+position = Vector2(644, 676)
+scale = Vector2(1.10769, 0.888235)
+texture = ExtResource("1_hg51l")
+region_enabled = true
+region_rect = Rect2(36.0567, 183.412, 1119.3, 85.8798)
+
+[node name="border2" type="Sprite2D" parent="."]
+position = Vector2(47, 675)
+scale = Vector2(1.07405, 0.726651)
+texture = ExtResource("1_hg51l")
+region_enabled = true
+region_rect = Rect2(33.194, 37.416, 32.9206, 91.6051)
+
+[node name="border" type="Sprite2D" parent="."]
+position = Vector2(640.725, 676.436)
+scale = Vector2(1.1087, 0.862644)
+texture = ExtResource("1_hg51l")
+region_enabled = true
+region_rect = Rect2(20.792, 282.628, 1155.08, 101.372)
