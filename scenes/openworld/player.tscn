@@ -270,16 +270,16 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_c50lx"]
-radius = 30.0
+radius = 23.0217
 
 [node name="Player" type="CharacterBody2D"]
 y_sort_enabled = true
 script = ExtResource("1_cj6my")
 
 [node name="Playeranim" type="AnimatedSprite2D" parent="."]
-scale = Vector2(0.8, 0.8)
+scale = Vector2(0.6, 0.6)
 sprite_frames = SubResource("SpriteFrames_gwvdq")
-animation = &"new_idle6"
+animation = &"new_idle2"
 offset = Vector2(0, -30)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

@@ -35,7 +35,8 @@ func _on_enemies_child_order_changed() -> void:
 		await get_tree().create_timer(1).timeout
 		#get_tree().change_scene_to_file("res://scenes/openworld/alotushuonetesti_1.tscn")
 		experience.experience_calc()
-		SceneManager.load_new_scene("res://scenes/openworld/alotushuonetesti1.tscn","fade_to_black")
+		#SceneManager.load_new_scene("res://scenes/openworld/alotushuonetesti1.tscn","fade_to_black")
+		#get_node("res://scenes/battle/level/battle.tscn").free()
 		
 func _on_enemy_turn_ended() -> void:
 	player_handler.start_turn()
