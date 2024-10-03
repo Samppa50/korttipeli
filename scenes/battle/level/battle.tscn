@@ -19,8 +19,14 @@
 size = Vector2(1279, 530.5)
 
 [node name="Battle" type="Node2D"]
+process_mode = 3
 script = ExtResource("1_entn3")
 char_stats = ExtResource("2_56ky3")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+process_mode = 3
+top_level = true
+anchor_mode = 0
 
 [node name="background" type="Sprite2D" parent="."]
 modulate = Color(0.737255, 0.737255, 0.737255, 1)
@@ -29,14 +35,17 @@ scale = Vector2(0.665885, 0.666667)
 texture = ExtResource("3_j2cuw")
 
 [node name="carddroparea" type="Area2D" parent="."]
+process_mode = 3
 collision_layer = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="carddroparea"]
+process_mode = 3
 position = Vector2(640.5, 266.75)
 shape = SubResource("RectangleShape2D_hl3xg")
 debug_color = Color(0, 0.513726, 0.6, 0.133333)
 
 [node name="EnemyHandler" type="Node2D" parent="."]
+process_mode = 3
 script = ExtResource("4_08nm5")
 
 [node name="EnemyBasic" parent="EnemyHandler" instance=ExtResource("5_egwwo")]
@@ -44,20 +53,25 @@ position = Vector2(1141, 316)
 stats = ExtResource("6_hmwbm")
 
 [node name="PlayerFight" parent="." instance=ExtResource("4_wj75e")]
+process_mode = 3
 position = Vector2(168, 313)
 stats = ExtResource("2_56ky3")
 
 [node name="CardTargetSelector" parent="." instance=ExtResource("7_7dtyn")]
+process_mode = 3
 visible = false
 
 [node name="PlayerHandler" type="Node" parent="." node_paths=PackedStringArray("hand")]
+process_mode = 3
 script = ExtResource("7_j0g6g")
 hand = NodePath("../BattleUI/Hand")
 
 [node name="BattleUI" type="CanvasLayer" parent="." groups=["ui_layer"]]
+process_mode = 3
 script = ExtResource("8_o5s7w")
 
 [node name="Hand" type="HBoxContainer" parent="BattleUI"]
+process_mode = 3
 custom_minimum_size = Vector2(800, 150)
 anchors_preset = 7
 anchor_left = 0.5
@@ -76,12 +90,15 @@ alignment = 1
 script = ExtResource("9_2o4nn")
 
 [node name="ManaUI" parent="BattleUI" instance=ExtResource("10_vifxp")]
+process_mode = 3
 char_stats = ExtResource("2_56ky3")
 
 [node name="Tooltip" parent="BattleUI" instance=ExtResource("11_wk1cf")]
+process_mode = 3
 
 [node name="EndTurnButton" type="Button" parent="BattleUI"]
 unique_name_in_owner = true
+process_mode = 3
 anchors_preset = 3
 anchor_left = 1.0
 anchor_top = 1.0
