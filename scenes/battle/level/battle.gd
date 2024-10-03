@@ -8,7 +8,6 @@ extends Node2D
 @onready var player: PlayerFight = $PlayerFight as PlayerFight
 
 
-
 func _ready() -> void:
 	var new_stats: CharacterStats = char_stats.create_instance()
 	battle_ui.char_stats = new_stats
@@ -36,13 +35,17 @@ func _on_enemies_child_order_changed() -> void:
 		#get_tree().change_scene_to_file("res://scenes/openworld/alotushuonetesti_1.tscn")
 		experience.experience_calc()
 		#SceneManager.load_new_scene("res://scenes/openworld/alotushuonetesti1.tscn","fade_to_black")
-		#get_node("res://scenes/battle/level/battle.tscn").free()
+		get_node("/root/Battle").free()
+		#get_tree().paused = false
+		Events.battle_won.emit()
 		
+
 func _on_enemy_turn_ended() -> void:
 	player_handler.start_turn()
 	enemy_handler.reset_enemy_actions()
 
 func _on_player_died() -> void:
 	print("you lost!")
+	Events.battle_lost.emit()
 	#tähän tulee häviö homma
 	

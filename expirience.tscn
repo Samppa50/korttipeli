@@ -3,6 +3,7 @@
 [ext_resource type="Script" path="res://experience.gd" id="1_k5otx"]
 
 [node name="experience" type="Node2D"]
+process_mode = 3
 script = ExtResource("1_k5otx")
 
 [node name="Button" type="Button" parent="."]

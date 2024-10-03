@@ -16,3 +16,9 @@ signal player_died
 
 signal enemy_action_completed(enemy: Enemy)
 signal enemy_turn_ended
+
+signal battle_started
+signal battle_won
+signal battle_lost
+
+signal playermovementresume

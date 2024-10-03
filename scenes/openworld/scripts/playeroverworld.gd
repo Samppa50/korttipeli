@@ -51,3 +51,9 @@ func _on_shop_movementresume():
 func player():
 	pass
 	
+
+func _on_area_2d_playermovementlock():
+	speed = 0
+
+func _ready():
+	Events.battle_won.connect(enable)
