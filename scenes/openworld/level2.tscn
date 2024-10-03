@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://bg6n6y7e55etf"]
+[gd_scene load_steps=21 format=3 uid="uid://bg6n6y7e55etf"]
 
 [ext_resource type="Script" path="res://scenes/openworld/level.gd" id="1_kywd2"]
 [ext_resource type="Texture2D" uid="uid://brif2n5w6udfv" path="res://art/tie0.2-Sheet.png" id="2_jpiwc"]
@@ -10,6 +10,8 @@
 [ext_resource type="PackedScene" uid="uid://sidvgbqie7pd" path="res://scenes/openworld/player.tscn" id="8_smobw"]
 [ext_resource type="PackedScene" uid="uid://b35asug5y2j6i" path="res://scenes/openworld/door.tscn" id="9_gumfc"]
 [ext_resource type="PackedScene" uid="uid://cqmo22t88tgm1" path="res://scenes/openworld/taverna.tscn" id="10_ppma1"]
+[ext_resource type="Script" path="res://scenes/openworld/area_2d.gd" id="11_pleit"]
+[ext_resource type="PackedScene" uid="uid://g3oc61nd6m21" path="res://scenes/GUI/gui.tscn" id="12_nrcpt"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_w4hfp"]
 texture = ExtResource("2_jpiwc")
@@ -73,6 +75,9 @@ sources/3 = SubResource("TileSetAtlasSource_fqsf7")
 sources/4 = SubResource("TileSetAtlasSource_vigvi")
 sources/5 = SubResource("TileSetAtlasSource_cw01f")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8kwpi"]
+size = Vector2(113.5, 76)
+
 [node name="level2" type="Node2D" node_paths=PackedStringArray("player", "doors")]
 script = ExtResource("1_kywd2")
 player = NodePath("Player")
@@ -101,3 +106,16 @@ entry_door_name = "NorthDoor"
 
 [node name="taverna" parent="." instance=ExtResource("10_ppma1")]
 position = Vector2(2451, 4375)
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(1190, 1002)
+script = ExtResource("11_pleit")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(58.25, 17)
+shape = SubResource("RectangleShape2D_8kwpi")
+
+[node name="GUI" parent="." instance=ExtResource("12_nrcpt")]
+
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
+[connection signal="body_exited" from="Area2D" to="Area2D" method="_on_body_exited"]
