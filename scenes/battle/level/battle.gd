@@ -9,6 +9,7 @@ extends Node2D
 
 
 func _ready() -> void:
+	$Camera2D.make_current()
 	var new_stats: CharacterStats = char_stats.create_instance()
 	battle_ui.char_stats = new_stats
 	player.stats = new_stats
@@ -46,6 +47,7 @@ func _on_enemy_turn_ended() -> void:
 
 func _on_player_died() -> void:
 	print("you lost!")
+	get_node("/root/Battle").free()
 	Events.battle_lost.emit()
 	#tähän tulee häviö homma
 	

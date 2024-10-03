@@ -57,3 +57,4 @@ func _on_area_2d_playermovementlock():
 
 func _ready():
 	Events.battle_won.connect(enable)
+	Events.battle_lost.connect(enable)

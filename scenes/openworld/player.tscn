@@ -283,5 +283,5 @@ animation = &"new_idle2"
 offset = Vector2(0, -30)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -18)
+position = Vector2(0, -6)
 shape = SubResource("CircleShape2D_c50lx")
