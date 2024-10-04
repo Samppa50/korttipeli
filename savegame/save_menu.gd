@@ -7,10 +7,10 @@ const SECURITY_KEY = "5922ISDK"
 var player_data = PlayerData.new()
 var current_world : String = "404 not found"
 
-
-
 func _ready():
 	verify_save_directory(SAVE_DIR)
+
+
 
 func verify_save_directory(path : String):
 	DirAccess.make_dir_absolute(path)
