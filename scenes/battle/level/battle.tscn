@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://dtn8o3sshmkua"]
+[gd_scene load_steps=17 format=3 uid="uid://dtn8o3sshmkua"]
 
 [ext_resource type="Script" path="res://scenes/battle/level/battle.gd" id="1_entn3"]
 [ext_resource type="Resource" uid="uid://djosjrop0eaof" path="res://scenes/battle/player/player.tres" id="2_56ky3"]
@@ -14,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://h2g07vhvrbse" path="res://scenes/battle/card_ui/mana_ui.tscn" id="10_vifxp"]
 [ext_resource type="PackedScene" uid="uid://bahe2hmxowoal" path="res://scenes/battle/hand_ui/tooltip.tscn" id="11_wk1cf"]
 [ext_resource type="Theme" uid="uid://on4kexy3pw0s" path="res://themes/main_theme.tres" id="12_g0b6n"]
+[ext_resource type="PackedScene" uid="uid://bgh5inegvxc4y" path="res://scenes/battle/battle_ended.tscn" id="15_5bdbq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hl3xg"]
 size = Vector2(1279, 530.5)
@@ -112,3 +113,7 @@ grow_horizontal = 0
 grow_vertical = 0
 theme = ExtResource("12_g0b6n")
 text = "End Turn"
+
+[node name="BattleEnded" parent="." instance=ExtResource("15_5bdbq")]
+unique_name_in_owner = true
+visible = false
