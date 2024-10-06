@@ -25,3 +25,9 @@ func _process(delta):
 func _add_a_scene_manually():
 	get_tree().root.add_child(simultaneus_scene)
 
+func _ready():
+		Events.battle_won.connect(enemy_dead)
+
+func enemy_dead():
+	%Fight.visible = false
+	%Fight/CollisionShape2D.disabled = true

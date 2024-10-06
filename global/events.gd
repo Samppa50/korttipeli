@@ -25,4 +25,3 @@ signal battle_lost
 signal playermovementresume
 
 signal laituri1
-
