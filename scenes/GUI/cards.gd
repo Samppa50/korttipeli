@@ -8,7 +8,7 @@ var deck: CardPile
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	# Create a Control node
-	print(deck.cards[0].id)
+	#print(deck.cards[0].id)
 	#var control_node = Control.new()
 	#
 	## Apply the StyleBox to the Control node
