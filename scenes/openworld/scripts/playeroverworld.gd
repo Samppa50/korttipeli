@@ -2,6 +2,7 @@ class_name Player extends CharacterBody2D
 
 @export var move_speed : float = 100
 @export var input_enabled:bool = true
+@export var player_gold = 0
 
 
 @onready var anim = $Playeranim
