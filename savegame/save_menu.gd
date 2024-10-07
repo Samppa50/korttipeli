@@ -7,10 +7,9 @@ const SECURITY_KEY = "5922ISDK"
 var player_data = PlayerData.new()
 var current_world : String = "404 not found"
 
-
-
 func _ready():
 	verify_save_directory(SAVE_DIR)
+
 
 func verify_save_directory(path : String):
 	DirAccess.make_dir_absolute(path)
@@ -33,7 +32,8 @@ func save_data(path: String):
 			"player_xp": player_data.player_xp,
 			"player_needed_xp": player_data.player_needed_xp,
 			"Questaccepted": player_data.Questaccepted,
-			"Questdone": player_data.Questdone
+			"Questdone": player_data.Questdone,
+			"player_gold": player_data.player_gold
 		}
 	}
 	
@@ -67,6 +67,7 @@ func load_data(path: String):
 		player_data.player_needed_xp = data.player_data.player_needed_xp
 		player_data.Questaccepted = data.player_data.Questaccepted
 		player_data.Questdone = data.player_data.Questdone
+		player_data.player_gold = data.player_data.player_gold
 		teleport_player()
 		level_set()
 		Quest_set()
@@ -126,3 +127,9 @@ func Quest_get():
 	player_data.Questaccepted = Questsystem.quest1Accepted
 	player_data.Questdone = Questsystem.quest1done
 	
+func gold_set():
+	#kulta kannattaa varmaan yhdistää suoraan kauppaaan eikä pelaajaan
+	pass
+	
+func gold_get():
+	pass

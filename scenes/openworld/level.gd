@@ -11,7 +11,8 @@ func _ready() -> void:
 	#player.visible = false
 	if data == null:
 		enter_level()
-	
+
+
 func enter_level() -> void:
 	if data != null:
 		init_player_location()

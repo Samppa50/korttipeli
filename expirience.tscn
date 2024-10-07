@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://dvor0d3dfrm5f" path="res://art/bar.png" id="3_46p5u"]
 
 [node name="experience" type="Node2D"]
+process_mode = 3
 script = ExtResource("1_k5otx")
 
 [node name="Button" type="Button" parent="."]

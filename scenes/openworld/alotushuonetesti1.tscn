@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=3 uid="uid://buyeyvy33h0bd"]
+[gd_scene load_steps=37 format=3 uid="uid://buyeyvy33h0bd"]
 
 [ext_resource type="Script" path="res://scenes/openworld/level.gd" id="1_xvdw2"]
 [ext_resource type="Texture2D" uid="uid://ijccoth3a5oq" path="res://art/concrete-Sheet.png" id="2_kesdb"]
@@ -15,8 +15,7 @@
 [ext_resource type="Texture2D" uid="uid://cflx5pd2mxnf1" path="res://art/aita123.png" id="13_uwksc"]
 [ext_resource type="Script" path="res://scenes/openworld/Market1.gd" id="14_1oa55"]
 [ext_resource type="PackedScene" uid="uid://cgroda706y8f5" path="res://scenes/Shop/shop.tscn" id="15_4q532"]
-[ext_resource type="Script" path="res://scenes/openworld/scripts/Fight1.gd" id="16_3gk4t"]
-[ext_resource type="Texture2D" uid="uid://cu465ur2cyu6h" path="res://art/grindzombie.png" id="17_ucu03"]
+[ext_resource type="PackedScene" uid="uid://c2wluw6dbn5vi" path="res://scenes/openworld/fight.tscn" id="16_71sp1"]
 [ext_resource type="PackedScene" uid="uid://b35asug5y2j6i" path="res://scenes/openworld/door.tscn" id="18_8appa"]
 [ext_resource type="PackedScene" uid="uid://b737o1imroenu" path="res://savegame/menu.tscn" id="19_aa0vv"]
 [ext_resource type="PackedScene" uid="uid://sidvgbqie7pd" path="res://scenes/openworld/player.tscn" id="20_8ygk4"]
@@ -177,9 +176,6 @@ sources/8 = SubResource("TileSetAtlasSource_5flal")
 [sub_resource type="CircleShape2D" id="CircleShape2D_ld2yi"]
 radius = 52.0
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_6g71q"]
-radius = 33.0
-
 [node name="alotushuonetesti1" type="Node2D" node_paths=PackedStringArray("player", "doors")]
 y_sort_enabled = true
 script = ExtResource("1_xvdw2")
@@ -210,19 +206,8 @@ visible = false
 top_level = true
 position = Vector2(777, -18)
 
-[node name="Area2D" type="Area2D" parent="."]
-position = Vector2(-271, 310)
-script = ExtResource("16_3gk4t")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(437.6, 68.6)
-shape = SubResource("CircleShape2D_6g71q")
-
-[node name="Sprite2D" type="Sprite2D" parent="Area2D"]
-position = Vector2(437.6, 68.6)
-scale = Vector2(0.8, 0.8)
-texture = ExtResource("17_ucu03")
-flip_h = true
+[node name="Fight" parent="." instance=ExtResource("16_71sp1")]
+unique_name_in_owner = true
 
 [node name="NorthDoor" parent="." instance=ExtResource("18_8appa")]
 position = Vector2(898, 9)
@@ -255,5 +240,3 @@ position = Vector2(506, 1631)
 [connection signal="body_exited" from="Market1" to="Market1" method="_on_body_exited"]
 [connection signal="movementlock" from="Market1" to="Menu/Player" method="_on_market_1_movementlock"]
 [connection signal="movementresume" from="Market1/Shop" to="Menu/Player" method="_on_shop_movementresume"]
-[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
-[connection signal="body_exited" from="Area2D" to="Area2D" method="_on_body_exited"]

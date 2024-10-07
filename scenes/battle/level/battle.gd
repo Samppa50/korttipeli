@@ -8,8 +8,8 @@ extends Node2D
 @onready var player: PlayerFight = $PlayerFight as PlayerFight
 
 
-
 func _ready() -> void:
+	$Camera2D.make_current()
 	var new_stats: CharacterStats = char_stats.create_instance()
 	battle_ui.char_stats = new_stats
 	player.stats = new_stats
@@ -20,6 +20,8 @@ func _ready() -> void:
 	Events.player_turn_ended.connect(player_handler.end_turn)
 	Events.player_hand_discarded.connect(enemy_handler.start_turn)
 	Events.player_died.connect(_on_player_died)
+	
+	Events.battle_close.connect(close_window)
 	
 	start_battle(new_stats)
 	
@@ -33,15 +35,22 @@ func _on_enemies_child_order_changed() -> void:
 		print("you won!")
 		#tähän tulee ohjaus takaisin overworldiin! sekä xp ja kulta ja muut härpäkkeet
 		await get_tree().create_timer(1).timeout
-		#get_tree().change_scene_to_file("res://scenes/openworld/alotushuonetesti_1.tscn")
 		experience.experience_calc()
-		SceneManager.load_new_scene("res://scenes/openworld/alotushuonetesti1.tscn","fade_to_black")
-		
+		%BattleEnded.visible = true
+
+
 func _on_enemy_turn_ended() -> void:
 	player_handler.start_turn()
 	enemy_handler.reset_enemy_actions()
 
 func _on_player_died() -> void:
 	print("you lost!")
+	get_node("/root/Battle").free()
+	Events.battle_lost.emit()
 	#tähän tulee häviö homma
+	
+func close_window():
+	Events.battle_won.emit()
+	await get_tree().create_timer(0.2).timeout
+	get_node("/root/Battle").free()
 	

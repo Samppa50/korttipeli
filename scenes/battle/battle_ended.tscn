@@ -1,0 +1,94 @@
+[gd_scene load_steps=4 format=3 uid="uid://bgh5inegvxc4y"]
+
+[ext_resource type="Texture2D" uid="uid://drm3dn11gok63" path="res://art/gold.png" id="1_cuve8"]
+[ext_resource type="Script" path="res://scenes/battle/battle_ended.gd" id="1_nx2ep"]
+[ext_resource type="Resource" uid="uid://rhniuedqnqig" path="res://scenes/battle/enemy/basicenemy/basicenemy.tres" id="2_8psh2"]
+
+[node name="BattleEnded" type="Node2D"]
+script = ExtResource("1_nx2ep")
+stats = ExtResource("2_8psh2")
+
+[node name="Panel" type="Panel" parent="."]
+custom_minimum_size = Vector2(600, 400)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 346.0
+offset_top = 147.0
+offset_right = 946.0
+offset_bottom = 547.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="TextureRect" type="TextureRect" parent="Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -47.0
+offset_top = -20.0
+offset_right = -7.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_cuve8")
+
+[node name="Label" type="Label" parent="Panel/TextureRect"]
+layout_mode = 0
+offset_left = 43.0
+offset_top = 11.0
+offset_right = 83.0
+offset_bottom = 34.0
+text = "+"
+
+[node name="GoldText" type="Label" parent="Panel/TextureRect"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 60.0
+offset_top = 11.0
+offset_right = 123.0
+offset_bottom = 34.0
+text = "0"
+
+[node name="VictoryText" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 223.0
+offset_top = 30.0
+offset_right = 381.0
+offset_bottom = 99.0
+theme_override_font_sizes/font_size = 40
+text = "Victory!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="XPText" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 249.0
+offset_top = 229.0
+offset_right = 347.0
+offset_bottom = 252.0
+size_flags_horizontal = 4
+text = "EXPERIENCE:"
+
+[node name="Label" type="Label" parent="Panel/XPText"]
+layout_mode = 0
+offset_left = -24.0
+offset_top = 30.0
+offset_right = 124.0
+offset_bottom = 53.0
+text = "xp bar comes here!"
+
+[node name="ContinueButton" type="Button" parent="."]
+offset_left = 601.0
+offset_top = 447.0
+offset_right = 692.0
+offset_bottom = 524.0
+text = "CONTINUE"
+
+[connection signal="pressed" from="ContinueButton" to="." method="_on_continue_button_pressed"]

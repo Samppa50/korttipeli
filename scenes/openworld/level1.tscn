@@ -131,14 +131,15 @@ layer_3/name = "Ysort"
 layer_3/y_sort_enabled = true
 layer_3/tile_data = PackedInt32Array(1048587, 6, 0, 983047, 6, 0, 983058, 6, 0, 1114132, 6, 0, 1048599, 6, 0, 1310743, 6, 0, 1310730, 6, 0, 1179655, 6, 0, 983067, 6, 0, 1245211, 6, 0, 1376285, 6, 0, 1310749, 6, 0, 1245213, 6, 0, 1179677, 6, 0, 1114141, 6, 0, 1048605, 6, 0, 983069, 6, 0, 917533, 6, 0, 720925, 6, 0, 655389, 6, 0, 589853, 6, 0, 524317, 6, 0, 458781, 6, 0, 393245, 6, 0, 327709, 6, 0, 262173, 6, 0, 196637, 6, 0, 131101, 6, 0, 29, 6, 0, 65565, 6, 0, 131096, 6, 0, 65555, 6, 0, 262162, 6, 0, 393238, 6, 0, 393241, 6, 0, 589848, 6, 0, 589843, 6, 0, 393226, 6, 0, 327686, 6, 0, 786437, 6, 0, 786441, 6, 0, 851980, 6, 0, 131082, 6, 0, 131079, 6, 0)
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="Fight" type="Area2D" parent="."]
+unique_name_in_owner = true
 script = ExtResource("4_fcb4b")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Fight"]
 position = Vector2(1185.6, 1125.6)
 shape = SubResource("CircleShape2D_6rjc0")
 
-[node name="Sprite2D" type="Sprite2D" parent="Area2D"]
+[node name="Sprite2D" type="Sprite2D" parent="Fight"]
 position = Vector2(1184.6, 1127.6)
 scale = Vector2(0.8, 0.8)
 texture = ExtResource("5_kt78e")
@@ -172,5 +173,5 @@ entry_door_name = "SouthDoor"
 
 [node name="GUI" parent="." instance=ExtResource("15_ccj7a")]
 
-[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
-[connection signal="body_exited" from="Area2D" to="Area2D" method="_on_body_exited"]
+[connection signal="body_entered" from="Fight" to="Fight" method="_on_body_entered"]
+[connection signal="body_exited" from="Fight" to="Fight" method="_on_body_exited"]
