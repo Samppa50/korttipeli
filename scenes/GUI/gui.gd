@@ -20,8 +20,10 @@ func _on_quest_pressed():
 
 func _on_cards_pressed():
 	hideGUI()
+	$container/Cards.show()
 
 
 
 func hideGUI():
 	$container/Quest.hide()
+	$container/Cards.hide()

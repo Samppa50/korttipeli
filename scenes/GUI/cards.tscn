@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://cichtwpimodk0"]
+
+[ext_resource type="Script" path="res://scenes/GUI/cards.gd" id="1_66x2b"]
+
+[node name="Cards" type="Node2D"]
+script = ExtResource("1_66x2b")
+
+[node name="Title" type="Label" parent="."]
+offset_left = 397.0
+offset_top = 152.0
+offset_right = 626.0
+offset_bottom = 256.0
+theme_override_font_sizes/font_size = 68
+text = "Cards"
