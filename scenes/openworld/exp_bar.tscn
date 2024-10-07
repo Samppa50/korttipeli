@@ -1,0 +1,41 @@
+[gd_scene load_steps=3 format=3 uid="uid://bmqidgdew1enk"]
+
+[ext_resource type="Texture2D" uid="uid://hrt1v0writ8o" path="res://art/xpbar.png" id="1_hg51l"]
+
+[sub_resource type="GDScript" id="GDScript_aqg6r"]
+script/source = "extends Node2D
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	$bar.visible
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+"
+
+[node name="ExpBar" type="Node2D"]
+script = SubResource("GDScript_aqg6r")
+
+[node name="back" type="Sprite2D" parent="."]
+position = Vector2(644, 676)
+scale = Vector2(1.10769, 0.888235)
+texture = ExtResource("1_hg51l")
+region_enabled = true
+region_rect = Rect2(36.0567, 183.412, 1119.3, 85.8798)
+
+[node name="bar" type="Sprite2D" parent="."]
+position = Vector2(47, 675)
+scale = Vector2(1.07405, 0.726651)
+texture = ExtResource("1_hg51l")
+region_enabled = true
+region_rect = Rect2(33.194, 37.416, 32.9206, 91.6051)
+
+[node name="border" type="Sprite2D" parent="."]
+position = Vector2(640.725, 676.436)
+scale = Vector2(1.1087, 0.862644)
+texture = ExtResource("1_hg51l")
+region_enabled = true
+region_rect = Rect2(20.792, 282.628, 1155.08, 101.372)
