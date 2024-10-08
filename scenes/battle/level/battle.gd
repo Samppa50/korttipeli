@@ -35,8 +35,8 @@ func _on_enemies_child_order_changed() -> void:
 		print("you won!")
 		#tähän tulee ohjaus takaisin overworldiin! sekä xp ja kulta ja muut härpäkkeet
 		await get_tree().create_timer(1).timeout
-		experience.experience_calc()
 		%BattleEnded.visible = true
+		experience.experience_calc()
 
 
 func _on_enemy_turn_ended() -> void:

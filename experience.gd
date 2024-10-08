@@ -3,10 +3,12 @@ extends Node
 @export var characterlevel : int
 @export var xp = 0
 @export var xp_required = 100
+var node_index
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	$bar.region_rect = Rect2(0, 0, 0, 0)
+	Events.battle_close.connect(hide)
 #
 #
 ## Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -22,6 +24,7 @@ func level_up() -> void:
 	print(characterlevel)
 	
 func experience_calc() -> void:
+	$"/root/experience".visible = true
 	print("gained 10 xp")
 	xp =  xp + 10
 	print(xp)
@@ -41,6 +44,8 @@ func experience_calc() -> void:
 
 
 
-
 func _on_button_pressed():
 	experience_calc()
+
+func hide():
+	$"/root/experience".visible = false

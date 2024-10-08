@@ -6,34 +6,40 @@
 
 [node name="experience" type="Node2D"]
 process_mode = 3
+visible = false
+z_index = 100
+position = Vector2(320, 20)
+scale = Vector2(0.5, 0.5)
 script = ExtResource("1_k5otx")
 
 [node name="Button" type="Button" parent="."]
-offset_left = 312.0
-offset_top = 188.0
-offset_right = 869.0
-offset_bottom = 505.0
+visible = false
+offset_left = 369.0
+offset_top = 178.0
+offset_right = 926.0
+offset_bottom = 495.0
 text = "xp"
+metadata/_edit_use_anchors_ = true
 
 [node name="back" type="Sprite2D" parent="."]
-position = Vector2(644, 676)
-scale = Vector2(1.10769, 0.888235)
+position = Vector2(645.549, 49.1276)
+scale = Vector2(1.1, 0.88)
 texture = ExtResource("2_18mg0")
 region_enabled = true
 region_rect = Rect2(36.0567, 183.412, 1119.3, 85.8798)
 
 [node name="bar" type="Sprite2D" parent="."]
 texture_repeat = 2
-position = Vector2(640, 676)
-scale = Vector2(0.425, 0.422)
+position = Vector2(641.549, 49.1276)
+scale = Vector2(0.8, 0.64)
 texture = ExtResource("3_46p5u")
 region_enabled = true
 region_rect = Rect2(0, 0, 1280, 128.337)
 region_filter_clip_enabled = true
 
 [node name="border" type="Sprite2D" parent="."]
-position = Vector2(640.725, 676.436)
-scale = Vector2(1.1087, 0.862644)
+position = Vector2(642.274, 49.5636)
+scale = Vector2(1.1, 0.88)
 texture = ExtResource("2_18mg0")
 region_enabled = true
 region_rect = Rect2(20.792, 282.628, 1155.08, 101.372)
