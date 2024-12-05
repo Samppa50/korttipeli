@@ -11,3 +11,7 @@ class_name PlayerData extends Resource
 @export var Questaccepted = false
 @export var Questdone = false
 @export var player_gold = 0
+
+@export var fight1 = false
+@export var fight2 = false
+@export var fight3 = false

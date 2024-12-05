@@ -206,7 +206,7 @@ visible = false
 top_level = true
 position = Vector2(777, -18)
 
-[node name="Fight" parent="." instance=ExtResource("16_71sp1")]
+[node name="Fight1" parent="." instance=ExtResource("16_71sp1")]
 unique_name_in_owner = true
 
 [node name="NorthDoor" parent="." instance=ExtResource("18_8appa")]
@@ -235,6 +235,10 @@ position = Vector2(998, 200)
 
 [node name="taverna" parent="." instance=ExtResource("22_ak0l0")]
 position = Vector2(506, 1631)
+
+[node name="Fight2" parent="." instance=ExtResource("16_71sp1")]
+unique_name_in_owner = true
+position = Vector2(264, 184)
 
 [connection signal="body_entered" from="Market1" to="Market1" method="_on_body_entered"]
 [connection signal="body_exited" from="Market1" to="Market1" method="_on_body_exited"]

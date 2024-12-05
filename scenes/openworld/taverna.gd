@@ -133,7 +133,8 @@ func Quest_get():
 
 func _on_button_pressed():
 	save_data(SAVE_DIR + SAVE_FILE_NAME)
-
+	#SaveMenu.save_taverna()
+	#tämä käyttöön kun ehtii niin kaiken muun voi poistaa tästä tiedostosta.
 
 func _on_area_2d_body_entered(node):
 	$Button.visible = !$Button.visible

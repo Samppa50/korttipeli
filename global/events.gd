@@ -22,6 +22,7 @@ signal battle_started
 signal battle_won
 signal battle_lost
 signal battle_close
+signal battle_saved
 
 signal playermovementresume
 

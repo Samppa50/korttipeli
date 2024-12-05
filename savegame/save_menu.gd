@@ -7,6 +7,13 @@ const SECURITY_KEY = "5922ISDK"
 var player_data = PlayerData.new()
 var current_world : String = "404 not found"
 
+var new_scene = "null"
+var softsave = "null"
+var Fight1 = false
+var Fight2 = false
+var Fight3 = false
+
+
 func _ready():
 	verify_save_directory(SAVE_DIR)
 
@@ -18,6 +25,7 @@ func save_data(path: String):
 	save_teleport_player()
 	level_get()
 	Quest_get()
+	enemy_save()
 	var file = FileAccess.open_encrypted_with_pass(path, FileAccess.WRITE, SECURITY_KEY)
 	if file == null:
 		print(FileAccess.get_open_error())
@@ -33,7 +41,11 @@ func save_data(path: String):
 			"player_needed_xp": player_data.player_needed_xp,
 			"Questaccepted": player_data.Questaccepted,
 			"Questdone": player_data.Questdone,
-			"player_gold": player_data.player_gold
+			"player_gold": player_data.player_gold,
+			
+			"fight1": player_data.fight1,
+			"fight2": player_data.fight2,
+			"fight3": player_data.fight3
 		}
 	}
 	
@@ -68,12 +80,20 @@ func load_data(path: String):
 		player_data.Questaccepted = data.player_data.Questaccepted
 		player_data.Questdone = data.player_data.Questdone
 		player_data.player_gold = data.player_data.player_gold
+		player_data.fight1 = data.player_data.fight1
+		player_data.fight2 = data.player_data.fight2
+		player_data.fight3 = data.player_data.fight3
 		teleport_player()
 		level_set()
 		Quest_set()
+		enemy_load()
 	
 	else:	 
 		printerr("cannot open non-existent file")
+		
+func save_taverna():
+	save_data(SAVE_DIR + SAVE_FILE_NAME)
+
 
 func _on_save_button_pressed():
 	save_data(SAVE_DIR + SAVE_FILE_NAME)
@@ -101,8 +121,8 @@ func teleport_player():
 
 func save_teleport_player():
 	var player = get_node("./Player")
-	player_data.global_positionx = player.position.x
-	player_data.global_positiony = player.position.y
+#	player_data.global_positionx = player.position.x
+#	player_data.global_positiony = player.position.y
 	
 	player_data.world = "res://scenes/openworld/"+str(get_parent().name)+".tscn"
 	print("res://scenes/openworld/"+str(get_parent().name)+".tscn")
@@ -133,3 +153,34 @@ func gold_set():
 	
 func gold_get():
 	pass
+
+func enemy_set():
+	if new_scene.ends_with("alotushuonetesti1.tscn"):
+		get_node("/root/alotushuonetesti1/%Fight1").visible = !Fight1
+		get_node("/root/alotushuonetesti1/%Fight2").visible = !Fight2
+	if new_scene.ends_with("level1.tscn"):
+		get_node("/root/level1/%Fight3").visible = !Fight3
+	if new_scene.ends_with("level2.tscn"):
+		pass
+	
+	
+func enemy_get():
+	if softsave == "Fight1":
+		Fight1 = !Fight1
+		print("fight1 changed")
+	if softsave == "Fight2":
+		Fight2 = !Fight2
+		print("fight2 changed")
+	if softsave == "Fight3":
+		Fight3 = !Fight3
+		print("fight3 changed")
+
+func enemy_save():
+	Fight1 = player_data.fight1
+	Fight2 = player_data.fight2
+	Fight3 = player_data.fight3
+	
+func enemy_load():
+	player_data.fight1 = Fight1
+	player_data.fight2 = Fight2
+	player_data.fight3 = Fight3
