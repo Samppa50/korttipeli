@@ -6,7 +6,7 @@ extends Node2D
 @onready var player_handler: PlayerHandler = $PlayerHandler as PlayerHandler
 @onready var enemy_handler: EnemyHandler = $EnemyHandler as EnemyHandler
 @onready var player: PlayerFight = $PlayerFight as PlayerFight
-
+var battle_save_ready = false
 
 func _ready() -> void:
 	$Camera2D.make_current()
@@ -22,6 +22,7 @@ func _ready() -> void:
 	Events.player_died.connect(_on_player_died)
 	
 	Events.battle_close.connect(close_window)
+	Events.battle_saved.connect(battle_save)
 	
 	start_battle(new_stats)
 	
@@ -52,5 +53,12 @@ func _on_player_died() -> void:
 func close_window():
 	Events.battle_won.emit()
 	await get_tree().create_timer(0.2).timeout
+	while battle_save_ready == false:
+		print(battle_save_ready)
+		pass
 	get_node("/root/Battle").free()
+	battle_save_ready = false
 	
+	
+func battle_save():
+	battle_save_ready = true

@@ -4,6 +4,7 @@ class_name Level extends Node2D
 @export var doors:Array[Door]
 var data:LevelDataHandoff
 
+var fight_num: String = "null" 
 
 
 func _ready() -> void:
@@ -11,6 +12,8 @@ func _ready() -> void:
 	#player.visible = false
 	if data == null:
 		enter_level()
+	Events.battle_won.connect(enemy_dead_signal)
+	SaveMenu.enemy_set()
 
 
 func enter_level() -> void:
@@ -55,3 +58,10 @@ func _disconnect_from_doors() -> void:
 	for door in doors:
 		if door.player_entered_door.is_connected(_on_player_entered_door):
 			door.player_entered_door.disconnect(_on_player_entered_door)
+
+func enemy_dead_signal():
+	if fight_num != "null":
+		get_node("%"+str(fight_num)).visible = false
+		get_node("%"+str(fight_num)+"/CollisionShape2D").disabled = true
+		
+	fight_num = "null"
