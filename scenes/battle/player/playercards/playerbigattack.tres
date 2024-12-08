@@ -1,0 +1,13 @@
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://5xph8nftgghh"]
+
+[ext_resource type="Texture2D" uid="uid://dd5g1u36arny" path="res://art/miekka.png" id="1_ycdgq"]
+[ext_resource type="Script" path="res://scenes/battle/player/playercards/playerbigattack.gd" id="2_bf1dx"]
+
+[resource]
+script = ExtResource("2_bf1dx")
+id = ""
+type = 0
+target = 1
+cost = 2
+icon = ExtResource("1_ycdgq")
+tooltip_text = "[center]Deal [color=\"ff0000\"]10[/color] damage[/center]"

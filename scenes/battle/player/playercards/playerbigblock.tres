@@ -1,0 +1,13 @@
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://b26o1admmpmtd"]
+
+[ext_resource type="Texture2D" uid="uid://dk1tmj3ckf3rb" path="res://art/bigshield.png" id="1_sf34a"]
+[ext_resource type="Script" path="res://scenes/battle/player/playercards/playerbigblock.gd" id="1_uconk"]
+
+[resource]
+script = ExtResource("1_uconk")
+id = ""
+type = 1
+target = 0
+cost = 2
+icon = ExtResource("1_sf34a")
+tooltip_text = "[center]Gain [color=\"0044ff\"]7[/color] block[/center]"
