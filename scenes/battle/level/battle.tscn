@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://scenes/battle/level/battle.gd" id="1_entn3"]
 [ext_resource type="Resource" uid="uid://djosjrop0eaof" path="res://scenes/battle/player/player.tres" id="2_56ky3"]
-[ext_resource type="Texture2D" uid="uid://dxocmwdqywapg" path="res://art/megakeharibackground.png" id="3_j2cuw"]
+[ext_resource type="Texture2D" uid="uid://brh20rx1h0kws" path="res://art/new_background.png" id="3_8ciwu"]
 [ext_resource type="Script" path="res://scenes/battle/enemy/enemy_handler.gd" id="4_08nm5"]
 [ext_resource type="PackedScene" uid="uid://dbysdqp1ojuut" path="res://scenes/battle/player/playerfight.tscn" id="4_wj75e"]
 [ext_resource type="PackedScene" uid="uid://bpes5bwjwttui" path="res://scenes/battle/enemy/basicenemy/enemybasic.tscn" id="5_egwwo"]
@@ -33,7 +33,7 @@ anchor_mode = 0
 modulate = Color(0.737255, 0.737255, 0.737255, 1)
 position = Vector2(640.75, 360)
 scale = Vector2(0.665885, 0.666667)
-texture = ExtResource("3_j2cuw")
+texture = ExtResource("3_8ciwu")
 
 [node name="carddroparea" type="Area2D" parent="."]
 process_mode = 3

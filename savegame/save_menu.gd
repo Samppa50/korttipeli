@@ -87,6 +87,7 @@ func load_data(path: String):
 		level_set()
 		Quest_set()
 		enemy_load()
+		#print(player_data.fight2)
 	
 	else:	 
 		printerr("cannot open non-existent file")

@@ -1,9 +1,15 @@
-[gd_scene load_steps=2 format=3 uid="uid://dbh08idldnk7u"]
+[gd_scene load_steps=3 format=3 uid="uid://dbh08idldnk7u"]
 
 [ext_resource type="Script" path="res://scenes/startscreen/StartScreen.gd" id="1_61bt6"]
+[ext_resource type="Texture2D" uid="uid://d3huj1aef45lv" path="res://art/TESTplayer.png" id="2_c8cdj"]
 
 [node name="StartScreen" type="Node2D"]
 script = ExtResource("1_61bt6")
+
+[node name="Panel" type="Panel" parent="."]
+modulate = Color(0, 0.788235, 0.239216, 1)
+offset_right = 1280.0
+offset_bottom = 720.0
 
 [node name="StartButton" type="Button" parent="."]
 custom_minimum_size = Vector2(300, 150)
@@ -13,14 +19,19 @@ offset_right = 610.0
 offset_bottom = 431.0
 size_flags_horizontal = 4
 size_flags_vertical = 4
-text = "Start"
+text = "New Game"
 
 [node name="LoadButton" type="Button" parent="."]
 offset_left = 716.0
 offset_top = 282.0
 offset_right = 1015.0
 offset_bottom = 431.0
-text = "Load"
+text = "Load Game"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(664, 352)
+scale = Vector2(5, 5)
+texture = ExtResource("2_c8cdj")
 
 [connection signal="button_up" from="StartButton" to="." method="_on_button_button_up"]
 [connection signal="pressed" from="LoadButton" to="." method="_on_load_button_pressed"]
