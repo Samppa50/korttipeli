@@ -3,10 +3,46 @@ extends Node2D
 const BASE_STYLEBOX :=preload("res://scenes/battle/card_ui/card_style.tres")
 const DRAG_STYLEBOX :=preload("res://scenes/battle/card_ui/glow_card_style.tres")
 const HOVER_STYLEBOX :=preload("res://scenes/battle/card_ui/hover_card_style.tres")
-
-var deck: CardPile
+const CARDS :=preload("res://scenes/battle/player/player_starting_deck.tres")
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	
+	#PROBABLY the right way to do it, but later
+	#var ui = CardUI.new()
+	#ui._set_card(CARDS.cards[6])
+	#var pos = Vector2(100, 100)
+	#ui.animate_to_position(pos, 0)
+	#var pos = Vector2(100, 100)
+	#ui.animate_to_position(pos, 0)
+	
+	#var sprite = Sprite2D.new()
+	#sprite.texture = CARDS.cards[0].icon
+	#var pos = Vector2(100, 100)
+	#sprite.position = pos
+	#add_child(sprite)
+	
+	for i in range(CARDS.cards.size()):
+		print(i)
+		
+		
+		
+		var icon = Sprite2D.new()
+		icon.texture = CARDS.cards[i].icon
+		var w_gap = 75 * i
+		var h_gap = 0 * 75
+		var colums = 6
+		if i >= colums: 
+			h_gap = 1
+			h_gap = h_gap * 75
+			w_gap = w_gap - colums * 75
+		
+		var pos = Vector2(300 + w_gap, 300 + h_gap)
+		icon.position = pos
+		
+		add_child(icon)
+	# Optionally, position the sprite
+	
+	
 	# Create a Control node
 	#print(deck.cards[0].id)
 	#var control_node = Control.new()
