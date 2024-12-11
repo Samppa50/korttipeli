@@ -22,6 +22,7 @@ func load_new_scene(content_path:String, transition_type:String="fade_to_black")
 	get_tree().root.add_child(loading_screen)
 	loading_screen.start_transition(transition_type)
 	_load_content(content_path)
+	print(content_path)
 	SaveMenu.new_scene = content_path
 	
 	

@@ -8,6 +8,7 @@ script = ExtResource("1_dofbe")
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="SaveButton" type="Button" parent="CanvasLayer"]
+visible = false
 custom_minimum_size = Vector2(100, 50)
 offset_left = 2.0
 offset_top = 2.0

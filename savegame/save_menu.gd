@@ -22,9 +22,12 @@ func verify_save_directory(path : String):
 	DirAccess.make_dir_absolute(path)
 
 func save_data(path: String):
-	save_teleport_player()
+	if player_data.world == null:
+		save_teleport_player()
 	level_get()
 	Quest_get()
+	print("fight 1 state")
+	print(Fight1)
 	enemy_save()
 	var file = FileAccess.open_encrypted_with_pass(path, FileAccess.WRITE, SECURITY_KEY)
 	if file == null:
@@ -52,6 +55,7 @@ func save_data(path: String):
 	var json_string = JSON.stringify(data, "\t")
 	file.store_string(json_string)
 	file.close()
+	player_data.world = null
 
 func load_data(path: String):
 	if FileAccess.file_exists(path):
@@ -157,6 +161,8 @@ func gold_get():
 
 func enemy_set():
 	if new_scene.ends_with("alotushuonetesti1.tscn"):
+		print("setting enemies")
+		print(!Fight1)
 		get_node("/root/alotushuonetesti1/%Fight1").visible = !Fight1
 		get_node("/root/alotushuonetesti1/%Fight2").visible = !Fight2
 	if new_scene.ends_with("level1.tscn"):
@@ -176,12 +182,13 @@ func enemy_get():
 		Fight3 = !Fight3
 		print("fight3 changed")
 
-func enemy_save():
+#vaihdettu load ja save tekstit
+func enemy_load():
 	Fight1 = player_data.fight1
 	Fight2 = player_data.fight2
 	Fight3 = player_data.fight3
 	
-func enemy_load():
+func enemy_save():
 	player_data.fight1 = Fight1
 	player_data.fight2 = Fight2
 	player_data.fight3 = Fight3
