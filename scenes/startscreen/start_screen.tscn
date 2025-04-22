@@ -33,5 +33,9 @@ position = Vector2(664, 352)
 scale = Vector2(5, 5)
 texture = ExtResource("2_c8cdj")
 
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(-318, 360)
+offset = Vector2(960, 0)
+
 [connection signal="button_up" from="StartButton" to="." method="_on_button_button_up"]
 [connection signal="pressed" from="LoadButton" to="." method="_on_load_button_pressed"]

@@ -4,25 +4,27 @@
 [ext_resource type="Texture2D" uid="uid://hrt1v0writ8o" path="res://art/xpbar.png" id="2_18mg0"]
 [ext_resource type="Texture2D" uid="uid://dvor0d3dfrm5f" path="res://art/bar.png" id="3_46p5u"]
 
-[node name="experience" type="Node2D"]
+[node name="experience" type="Control"]
 process_mode = 3
 visible = false
 z_index = 100
-position = Vector2(320, 20)
+layout_mode = 3
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+grow_horizontal = 2
 scale = Vector2(0.5, 0.5)
 script = ExtResource("1_k5otx")
 
-[node name="Button" type="Button" parent="."]
-visible = false
-offset_left = 369.0
-offset_top = 178.0
-offset_right = 926.0
-offset_bottom = 495.0
-text = "xp"
-metadata/_edit_use_anchors_ = true
+[node name="border" type="Sprite2D" parent="."]
+position = Vector2(622.274, 49.5636)
+scale = Vector2(1.1, 0.88)
+texture = ExtResource("2_18mg0")
+region_enabled = true
+region_rect = Rect2(20.792, 282.628, 1155.08, 101.372)
 
 [node name="back" type="Sprite2D" parent="."]
-position = Vector2(645.549, 49.1276)
+position = Vector2(625.549, 49.1276)
 scale = Vector2(1.1, 0.88)
 texture = ExtResource("2_18mg0")
 region_enabled = true
@@ -30,18 +32,20 @@ region_rect = Rect2(36.0567, 183.412, 1119.3, 85.8798)
 
 [node name="bar" type="Sprite2D" parent="."]
 texture_repeat = 2
-position = Vector2(641.549, 49.1276)
+position = Vector2(621.549, 49.1276)
 scale = Vector2(0.8, 0.64)
 texture = ExtResource("3_46p5u")
 region_enabled = true
 region_rect = Rect2(0, 0, 1280, 128.337)
 region_filter_clip_enabled = true
 
-[node name="border" type="Sprite2D" parent="."]
-position = Vector2(642.274, 49.5636)
-scale = Vector2(1.1, 0.88)
-texture = ExtResource("2_18mg0")
-region_enabled = true
-region_rect = Rect2(20.792, 282.628, 1155.08, 101.372)
+[node name="Button" type="Button" parent="."]
+visible = false
+offset_left = 349.0
+offset_top = 178.0
+offset_right = 906.0
+offset_bottom = 495.0
+text = "xp"
+metadata/_edit_use_anchors_ = true
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

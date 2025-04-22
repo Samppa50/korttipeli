@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://g3oc61nd6m21"]
+[gd_scene load_steps=5 format=3 uid="uid://g3oc61nd6m21"]
 
 [ext_resource type="Script" path="res://scenes/GUI/gui.gd" id="1_5q5ur"]
 [ext_resource type="PackedScene" uid="uid://ddab65twps63g" path="res://scenes/GUI/quest.tscn" id="1_t2wih"]
 [ext_resource type="PackedScene" uid="uid://cichtwpimodk0" path="res://scenes/GUI/cards.tscn" id="3_dcny0"]
+[ext_resource type="Script" path="res://scenes/GUI/experienceGUI.gd" id="4_uvgdm"]
 
 [node name="GUI" type="CanvasLayer"]
 process_mode = 3
@@ -39,11 +40,80 @@ layout_mode = 2
 text = "Cards
 "
 
+[node name="experience" type="Button" parent="container/Panel/VBoxContainer"]
+layout_mode = 2
+text = "Experience
+"
+
 [node name="Quest" parent="container" instance=ExtResource("1_t2wih")]
 layout_mode = 1
 
 [node name="Cards" parent="container" instance=ExtResource("3_dcny0")]
 position = Vector2(2, -2)
 
+[node name="Experience" type="Control" parent="container"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+tooltip_text = "Experience"
+script = ExtResource("4_uvgdm")
+
+[node name="Title" type="Label" parent="container/Experience"]
+layout_mode = 0
+offset_left = 383.0
+offset_top = 166.0
+offset_right = 648.0
+offset_bottom = 237.0
+theme_override_font_sizes/font_size = 50
+text = "Experience"
+
+[node name="xp" type="Label" parent="container/Experience"]
+layout_mode = 0
+offset_left = 479.0
+offset_top = 345.0
+offset_right = 549.0
+offset_bottom = 409.0
+text = "1"
+
+[node name="xpNeeded" type="Label" parent="container/Experience"]
+layout_mode = 0
+offset_left = 615.0
+offset_top = 345.0
+offset_right = 697.0
+offset_bottom = 406.0
+text = "2"
+
+[node name="level" type="Label" parent="container/Experience"]
+layout_mode = 0
+offset_left = 350.0
+offset_top = 346.0
+offset_right = 427.0
+offset_bottom = 397.0
+text = "3"
+
+[node name="levelText" type="Label" parent="container/Experience"]
+layout_mode = 0
+offset_left = 331.0
+offset_top = 317.0
+offset_right = 389.0
+offset_bottom = 356.0
+text = "LEVEL"
+
+[node name="xpText" type="Label" parent="container/Experience"]
+offset_left = 474.0
+offset_top = 316.0
+offset_right = 532.0
+offset_bottom = 355.0
+text = "XP"
+
+[node name="xpNeededText" type="Label" parent="container/Experience"]
+offset_left = 576.0
+offset_top = 315.0
+offset_right = 681.0
+offset_bottom = 354.0
+text = "XP to level up"
+
 [connection signal="pressed" from="container/Panel/VBoxContainer/quest" to="." method="_on_quest_pressed"]
 [connection signal="pressed" from="container/Panel/VBoxContainer/cards" to="." method="_on_cards_pressed"]
+[connection signal="pressed" from="container/Panel/VBoxContainer/experience" to="." method="_on_experience_pressed"]
