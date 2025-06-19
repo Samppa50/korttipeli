@@ -24,6 +24,7 @@ Data="*res://savegame/resources/PlayerData.gd"
 Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 Questsystem="*res://global/Questsystem.gd"
 experience="*res://expirience.tscn"
+Shaker="*res://global/shaker.gd"
 
 [dialogic]
 

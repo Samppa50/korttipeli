@@ -41,6 +41,7 @@ region_filter_clip_enabled = true
 
 [node name="Button" type="Button" parent="."]
 visible = false
+layout_mode = 0
 offset_left = 349.0
 offset_top = 178.0
 offset_right = 906.0

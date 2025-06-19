@@ -101,6 +101,7 @@ offset_bottom = 356.0
 text = "LEVEL"
 
 [node name="xpText" type="Label" parent="container/Experience"]
+layout_mode = 0
 offset_left = 474.0
 offset_top = 316.0
 offset_right = 532.0
@@ -108,6 +109,7 @@ offset_bottom = 355.0
 text = "XP"
 
 [node name="xpNeededText" type="Label" parent="container/Experience"]
+layout_mode = 0
 offset_left = 576.0
 offset_top = 315.0
 offset_right = 681.0
