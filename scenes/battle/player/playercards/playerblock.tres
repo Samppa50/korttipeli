@@ -1,7 +1,7 @@
 [gd_resource type="Resource" load_steps=3 format=3 uid="uid://c5gld1ebub0ak"]
 
 [ext_resource type="Texture2D" uid="uid://btvjhioq0tidi" path="res://art/block.png" id="1_6mruw"]
-[ext_resource type="Script" path="res://scenes/battle/player/playercards/playerblock.gd" id="1_r5u3n"]
+[ext_resource type="Script" uid="uid://bnlhyodpc5k6r" path="res://scenes/battle/player/playercards/playerblock.gd" id="1_r5u3n"]
 
 [resource]
 script = ExtResource("1_r5u3n")

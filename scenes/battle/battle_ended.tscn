@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://bgh5inegvxc4y"]
 
 [ext_resource type="Texture2D" uid="uid://drm3dn11gok63" path="res://art/gold.png" id="1_cuve8"]
-[ext_resource type="Script" path="res://scenes/battle/battle_ended.gd" id="1_nx2ep"]
+[ext_resource type="Script" uid="uid://diuto12jkf4na" path="res://scenes/battle/battle_ended.gd" id="1_nx2ep"]
 [ext_resource type="Resource" uid="uid://rhniuedqnqig" path="res://scenes/battle/enemy/basicenemy/basicenemy.tres" id="2_8psh2"]
 
 [node name="BattleEnded" type="Node2D"]

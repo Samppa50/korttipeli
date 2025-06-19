@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://b737o1imroenu"]
 
-[ext_resource type="Script" path="res://savegame/save_menu.gd" id="1_dofbe"]
+[ext_resource type="Script" uid="uid://beohg2gilum3k" path="res://savegame/save_menu.gd" id="1_dofbe"]
 
 [node name="Menu" type="Node2D"]
 script = ExtResource("1_dofbe")

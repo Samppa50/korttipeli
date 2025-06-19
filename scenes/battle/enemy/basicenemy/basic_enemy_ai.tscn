@@ -1,9 +1,9 @@
 [gd_scene load_steps=5 format=3 uid="uid://b2ne7ddiqcyam"]
 
-[ext_resource type="Script" path="res://scenes/battle/enemy/enemy_action_picker.gd" id="1_p4wjs"]
-[ext_resource type="Script" path="res://scenes/battle/enemy/basicenemy/basic_attack_action.gd" id="2_3j0g0"]
-[ext_resource type="Script" path="res://scenes/battle/enemy/basicenemy/basic_block_action.gd" id="3_diqfq"]
-[ext_resource type="Script" path="res://scenes/battle/enemy/basicenemy/basic_megablock_action.gd" id="4_hacs3"]
+[ext_resource type="Script" uid="uid://cdwrt7cs5a6ab" path="res://scenes/battle/enemy/enemy_action_picker.gd" id="1_p4wjs"]
+[ext_resource type="Script" uid="uid://cyx44mm0jabbg" path="res://scenes/battle/enemy/basicenemy/basic_attack_action.gd" id="2_3j0g0"]
+[ext_resource type="Script" uid="uid://cil08wgx8e2r4" path="res://scenes/battle/enemy/basicenemy/basic_block_action.gd" id="3_diqfq"]
+[ext_resource type="Script" uid="uid://sblwfho77nr8" path="res://scenes/battle/enemy/basicenemy/basic_megablock_action.gd" id="4_hacs3"]
 
 [node name="BasicEnemyAI" type="Node"]
 script = ExtResource("1_p4wjs")

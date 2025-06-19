@@ -1,6 +1,6 @@
 [gd_scene load_steps=45 format=3 uid="uid://sidvgbqie7pd"]
 
-[ext_resource type="Script" path="res://scenes/openworld/scripts/playeroverworld.gd" id="1_cj6my"]
+[ext_resource type="Script" uid="uid://dpj3ofykq2icq" path="res://scenes/openworld/scripts/playeroverworld.gd" id="1_cj6my"]
 [ext_resource type="Texture2D" uid="uid://c7x1spfyblunn" path="res://art/pelaaja-sheet.png" id="2_j3qfy"]
 [ext_resource type="Texture2D" uid="uid://dnkyq6s71a15l" path="res://art/isompihahmoilmanvaliilmansuuntia-Sheet.png" id="3_t8xiy"]
 [ext_resource type="Texture2D" uid="uid://2tgj3gibvjto" path="res://art/isompihahmo8test-Sheet.png" id="4_ctwhj"]

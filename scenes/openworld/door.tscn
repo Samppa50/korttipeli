@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://b35asug5y2j6i"]
 
-[ext_resource type="Script" path="res://scenes/openworld/door.gd" id="1_8anu4"]
+[ext_resource type="Script" uid="uid://dhbql66qug1sp" path="res://scenes/openworld/door.gd" id="1_8anu4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yhmxg"]
 

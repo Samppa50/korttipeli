@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://cqmo22t88tgm1"]
 
-[ext_resource type="Script" path="res://scenes/openworld/taverna.gd" id="1_4tbmh"]
+[ext_resource type="Script" uid="uid://dokj0nm3sse3e" path="res://scenes/openworld/taverna.gd" id="1_4tbmh"]
 [ext_resource type="Texture2D" uid="uid://d1ehuekqhbl1k" path="res://art/taverna.png" id="1_ob31c"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vxm4i"]

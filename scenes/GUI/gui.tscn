@@ -1,9 +1,9 @@
 [gd_scene load_steps=5 format=3 uid="uid://g3oc61nd6m21"]
 
-[ext_resource type="Script" path="res://scenes/GUI/gui.gd" id="1_5q5ur"]
+[ext_resource type="Script" uid="uid://bie55rhjkj08t" path="res://scenes/GUI/gui.gd" id="1_5q5ur"]
 [ext_resource type="PackedScene" uid="uid://ddab65twps63g" path="res://scenes/GUI/quest.tscn" id="1_t2wih"]
 [ext_resource type="PackedScene" uid="uid://cichtwpimodk0" path="res://scenes/GUI/cards.tscn" id="3_dcny0"]
-[ext_resource type="Script" path="res://scenes/GUI/experienceGUI.gd" id="4_uvgdm"]
+[ext_resource type="Script" uid="uid://bpq0b7eyobjoo" path="res://scenes/GUI/experienceGUI.gd" id="4_uvgdm"]
 
 [node name="GUI" type="CanvasLayer"]
 process_mode = 3
