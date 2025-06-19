@@ -1,6 +1,6 @@
 [gd_scene load_steps=37 format=3 uid="uid://buyeyvy33h0bd"]
 
-[ext_resource type="Script" path="res://scenes/openworld/level.gd" id="1_xvdw2"]
+[ext_resource type="Script" uid="uid://ddkmold8aj7d0" path="res://scenes/openworld/level.gd" id="1_xvdw2"]
 [ext_resource type="Texture2D" uid="uid://ijccoth3a5oq" path="res://art/concrete-Sheet.png" id="2_kesdb"]
 [ext_resource type="Texture2D" uid="uid://brif2n5w6udfv" path="res://art/tie0.2-Sheet.png" id="3_4kcbh"]
 [ext_resource type="Texture2D" uid="uid://cnyme8csg1xaa" path="res://art/fruit_table.png" id="4_iluh3"]
@@ -13,7 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://cxccehgatehtu" path="res://art/cobble-Sheet.png" id="11_ggdo2"]
 [ext_resource type="Texture2D" uid="uid://cg2pslcr2bphb" path="res://art/dirt_path0.1-Sheet.png" id="12_a6gd6"]
 [ext_resource type="Texture2D" uid="uid://cflx5pd2mxnf1" path="res://art/aita123.png" id="13_uwksc"]
-[ext_resource type="Script" path="res://scenes/openworld/Market1.gd" id="14_1oa55"]
+[ext_resource type="Script" uid="uid://cwp5aw0dt5y6i" path="res://scenes/openworld/Market1.gd" id="14_1oa55"]
 [ext_resource type="PackedScene" uid="uid://cgroda706y8f5" path="res://scenes/Shop/shop.tscn" id="15_4q532"]
 [ext_resource type="PackedScene" uid="uid://c2wluw6dbn5vi" path="res://scenes/openworld/fight.tscn" id="16_71sp1"]
 [ext_resource type="PackedScene" uid="uid://b35asug5y2j6i" path="res://scenes/openworld/door.tscn" id="18_8appa"]

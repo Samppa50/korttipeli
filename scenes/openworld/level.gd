@@ -21,6 +21,8 @@ func enter_level() -> void:
 		init_player_location()
 	player.enable()
 	_connect_to_doors()
+	#tää saaattaa olla parempi tässä 
+	#SaveMenu.enemy_set()
 	
 func init_player_location() -> void:
 	#if data != null:

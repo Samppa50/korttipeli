@@ -2,7 +2,7 @@
 
 [ext_resource type="Theme" uid="uid://on4kexy3pw0s" path="res://themes/main_theme.tres" id="1_6llbg"]
 [ext_resource type="Texture2D" uid="uid://jg1w35iutuk3" path="res://art/Sprite-axe01.png" id="2_amvf2"]
-[ext_resource type="Script" path="res://scenes/battle/hand_ui/tooltip.gd" id="2_hew5f"]
+[ext_resource type="Script" uid="uid://hdwa820gmsml" path="res://scenes/battle/hand_ui/tooltip.gd" id="2_hew5f"]
 
 [node name="Tooltip" type="PanelContainer"]
 anchors_preset = 5

@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://b2ne7ddiqcyam" path="res://scenes/battle/enemy/basicenemy/basic_enemy_ai.tscn" id="1_pctbv"]
 [ext_resource type="Texture2D" uid="uid://safyqdgu6lm1" path="res://art/sankari.png" id="2_cgdy7"]
-[ext_resource type="Script" path="res://custom_resources/enemy_stats.gd" id="3_qhcno"]
+[ext_resource type="Script" uid="uid://rpp2nprjicv5" path="res://custom_resources/enemy_stats.gd" id="3_qhcno"]
 
 [resource]
 script = ExtResource("3_qhcno")

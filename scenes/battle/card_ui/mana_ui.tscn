@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://h2g07vhvrbse"]
 
 [ext_resource type="Theme" uid="uid://on4kexy3pw0s" path="res://themes/main_theme.tres" id="1_82pim"]
-[ext_resource type="Script" path="res://scenes/battle/card_ui/mana_ui.gd" id="2_v2rb7"]
+[ext_resource type="Script" uid="uid://bb3i4ql3q7dm5" path="res://scenes/battle/card_ui/mana_ui.gd" id="2_v2rb7"]
 
 [node name="ManaUI" type="Panel"]
 anchors_preset = 2

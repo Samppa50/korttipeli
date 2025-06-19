@@ -47,5 +47,9 @@ func experience_calc() -> void:
 func _on_button_pressed():
 	experience_calc()
 
+func show():
+	$"/root/experience".visible = true
+
+
 func hide():
 	$"/root/experience".visible = false

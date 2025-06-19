@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://c6ekrsdjigho8"]
 
 [ext_resource type="Texture2D" uid="uid://3pn2isch88lq" path="res://art/NPC_1.png" id="1_b48rf"]
-[ext_resource type="Script" path="res://NPC/npc_1.gd" id="1_pstj3"]
+[ext_resource type="Script" uid="uid://cpb3idgt27l4g" path="res://NPC/npc_1.gd" id="1_pstj3"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_68nij"]
 animations = [{

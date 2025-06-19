@@ -10,6 +10,7 @@ func  _process(delta):
 		get_tree().paused = !get_tree().paused
 		get_node("container").visible = get_tree().paused
 		hideGUI()
+		
 
 
 func _on_quest_pressed():
@@ -24,6 +25,15 @@ func _on_cards_pressed():
 
 
 
+
+
+func _on_experience_pressed():
+	hideGUI()
+	$container/Experience.show()
+
+
+
 func hideGUI():
 	$container/Quest.hide()
 	$container/Cards.hide()
+	$container/Experience.hide()

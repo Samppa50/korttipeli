@@ -1,9 +1,11 @@
 [gd_resource type="Resource" script_class="Card" load_steps=2 format=3 uid="uid://cntkct1no6ne2"]
 
-[ext_resource type="Script" path="res://custom_resources/card.gd" id="1_rryv6"]
+[ext_resource type="Script" uid="uid://dbujnagfcv803" path="res://custom_resources/card.gd" id="1_rryv6"]
 
 [resource]
 script = ExtResource("1_rryv6")
 id = "enemyblock"
 type = 1
 target = 0
+cost = 0
+tooltip_text = ""

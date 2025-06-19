@@ -1,7 +1,7 @@
 [gd_resource type="Resource" load_steps=3 format=3 uid="uid://5xph8nftgghh"]
 
 [ext_resource type="Texture2D" uid="uid://dd5g1u36arny" path="res://art/miekka.png" id="1_ycdgq"]
-[ext_resource type="Script" path="res://scenes/battle/player/playercards/playerbigattack.gd" id="2_bf1dx"]
+[ext_resource type="Script" uid="uid://yif37rx6e7p0" path="res://scenes/battle/player/playercards/playerbigattack.gd" id="2_bf1dx"]
 
 [resource]
 script = ExtResource("2_bf1dx")
